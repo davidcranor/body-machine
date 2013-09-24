@@ -42,7 +42,7 @@ HardwareSPI spi(1);
 
 int main()
 {
-	Receiver.begin(&spi);
+    Receiver.begin(&spi);
 }
 
 
