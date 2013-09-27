@@ -35,14 +35,19 @@ cranor@mit.edu
 //sorry.
 #include </Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.h>
 
-MCP2035 Receiver;
+#define MCP2035_IO_PIN 12
+#define MCP2035_CLK_ALERT_PIN 13
+#define MCP2035_CS_PIN 10
 
-// Use SPI port number 1
-HardwareSPI spi(1);
+
+MCP2035 Receiver;
 
 int main()
 {
-    Receiver.begin(&spi);
+    //For debugging
+	delay(3000);
+
+    Receiver.begin(MCP2035_IO_PIN, MCP2035_CLK_ALERT_PIN, MCP2035_CS_PIN);
 }
 
 
