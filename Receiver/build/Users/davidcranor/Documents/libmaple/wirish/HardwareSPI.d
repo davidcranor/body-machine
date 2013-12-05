@@ -1,0 +1,116 @@
+build//Users/davidcranor/Documents/libmaple/wirish/HardwareSPI.o: \
+ /Users/davidcranor/Documents/libmaple/wirish/HardwareSPI.cpp \
+ /Users/davidcranor/Documents/libmaple/wirish/include/wirish/HardwareSPI.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/libmaple_types.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/spi.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/rcc.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/rcc.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/nvic.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/util.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/nvic.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/stm32.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/stm32.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/spi.h \
+ /Users/davidcranor/Documents/libmaple/wirish/include/wirish/boards.h \
+ /Users/davidcranor/Documents/libmaple/wirish/include/wirish/wirish_types.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/gpio.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/gpio.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/exti.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/exti.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/timer.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/timer.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/libmaple.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/delay.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/bitband.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/adc.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/adc.h \
+ /Users/davidcranor/Documents/libmaple/wirish/boards/maple_mini/include/board/board.h \
+ /Users/davidcranor/Documents/libmaple/wirish/include/wirish/wirish.h \
+ /Users/davidcranor/Documents/libmaple/wirish/include/wirish/io.h \
+ /Users/davidcranor/Documents/libmaple/wirish/include/wirish/bit_constants.h \
+ /Users/davidcranor/Documents/libmaple/wirish/include/wirish/pwm.h \
+ /Users/davidcranor/Documents/libmaple/wirish/include/wirish/ext_interrupts.h \
+ /Users/davidcranor/Documents/libmaple/wirish/include/wirish/wirish_debug.h \
+ /Users/davidcranor/Documents/libmaple/wirish/include/wirish/wirish_math.h \
+ /Users/davidcranor/Documents/libmaple/wirish/include/wirish/wirish_time.h \
+ /Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/systick.h \
+ /Users/davidcranor/Documents/libmaple/wirish/include/wirish/HardwareSerial.h \
+ /Users/davidcranor/Documents/libmaple/wirish/include/wirish/Print.h \
+ /Users/davidcranor/Documents/libmaple/wirish/include/wirish/HardwareTimer.h \
+ /Users/davidcranor/Documents/libmaple/wirish/include/wirish/usb_serial.h
+
+/Users/davidcranor/Documents/libmaple/wirish/include/wirish/HardwareSPI.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/libmaple_types.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/spi.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/rcc.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/rcc.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/nvic.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/util.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/nvic.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/stm32.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/stm32.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/spi.h:
+
+/Users/davidcranor/Documents/libmaple/wirish/include/wirish/boards.h:
+
+/Users/davidcranor/Documents/libmaple/wirish/include/wirish/wirish_types.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/gpio.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/gpio.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/exti.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/exti.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/timer.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/timer.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/libmaple.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/delay.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/bitband.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/adc.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/stm32f1/include/series/adc.h:
+
+/Users/davidcranor/Documents/libmaple/wirish/boards/maple_mini/include/board/board.h:
+
+/Users/davidcranor/Documents/libmaple/wirish/include/wirish/wirish.h:
+
+/Users/davidcranor/Documents/libmaple/wirish/include/wirish/io.h:
+
+/Users/davidcranor/Documents/libmaple/wirish/include/wirish/bit_constants.h:
+
+/Users/davidcranor/Documents/libmaple/wirish/include/wirish/pwm.h:
+
+/Users/davidcranor/Documents/libmaple/wirish/include/wirish/ext_interrupts.h:
+
+/Users/davidcranor/Documents/libmaple/wirish/include/wirish/wirish_debug.h:
+
+/Users/davidcranor/Documents/libmaple/wirish/include/wirish/wirish_math.h:
+
+/Users/davidcranor/Documents/libmaple/wirish/include/wirish/wirish_time.h:
+
+/Users/davidcranor/Documents/libmaple/libmaple/include/libmaple/systick.h:
+
+/Users/davidcranor/Documents/libmaple/wirish/include/wirish/HardwareSerial.h:
+
+/Users/davidcranor/Documents/libmaple/wirish/include/wirish/Print.h:
+
+/Users/davidcranor/Documents/libmaple/wirish/include/wirish/HardwareTimer.h:
+
+/Users/davidcranor/Documents/libmaple/wirish/include/wirish/usb_serial.h:
