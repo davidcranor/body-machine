@@ -629,8 +629,6 @@ Discarded input sections
                 0x00000000       0x1c build//Users/davidcranor/Documents/libmaple/wirish/Print.o
  .text._ZN5Print5printEli
                 0x00000000       0x10 build//Users/davidcranor/Documents/libmaple/wirish/Print.o
- .text._ZN5Print7printlnEii
-                0x00000000       0x12 build//Users/davidcranor/Documents/libmaple/wirish/Print.o
  .text._ZN5Print10printFloatEdh
                 0x00000000      0x150 build//Users/davidcranor/Documents/libmaple/wirish/Print.o
  .text._ZN5Print5printEdi
@@ -1454,7 +1452,7 @@ END GROUP
                 0x20005000                PROVIDE (__msp_init, 0x20005000)
                 0x08007624                PROVIDE (__exc_reset, __start__)
 
-.text           0x08005000     0x4e78
+.text           0x08005000     0x4e68
                 0x08005000                __text_start__ = .
  *(.stm32.interrupt_vector)
  .stm32.interrupt_vector
@@ -2047,276 +2045,278 @@ END GROUP
  .text._ZN5Print5printEii
                 0x08007c92       0x10 build//Users/davidcranor/Documents/libmaple/wirish/Print.o
                 0x08007c92                _ZN5Print5printEii
- *fill*         0x08007ca2        0x2 00
+ .text._ZN5Print7printlnEii
+                0x08007ca2       0x12 build//Users/davidcranor/Documents/libmaple/wirish/Print.o
+                0x08007ca2                _ZN5Print7printlnEii
  .text._ZN9USBSerialC1Ev
-                0x08007ca4       0x14 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
-                0x08007ca4                _ZN9USBSerialC1Ev
+                0x08007cb4       0x14 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
+                0x08007cb4                _ZN9USBSerialC1Ev
  .text._ZN9USBSerial5writeEh
-                0x08007cb8       0x14 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
-                0x08007cb8                _ZN9USBSerial5writeEh
+                0x08007cc8       0x14 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
+                0x08007cc8                _ZN9USBSerial5writeEh
  .text._ZN9USBSerial11isConnectedEv
-                0x08007ccc       0x18 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
-                0x08007ccc                _ZN9USBSerial11isConnectedEv
+                0x08007cdc       0x18 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
+                0x08007cdc                _ZN9USBSerial11isConnectedEv
  .text._ZL14ifaceSetupHookjPv
-                0x08007ce4       0x40 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
+                0x08007cf4       0x40 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
  .text._ZN9USBSerial5writeEPKvj
-                0x08007d24       0x70 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
-                0x08007d24                _ZN9USBSerial5writeEPKvj
+                0x08007d34       0x70 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
+                0x08007d34                _ZN9USBSerial5writeEPKvj
  .text._ZN9USBSerial5writeEPKc
-                0x08007d94       0x1a build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
-                0x08007d94                _ZN9USBSerial5writeEPKc
- *fill*         0x08007dae        0x2 00
+                0x08007da4       0x1a build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
+                0x08007da4                _ZN9USBSerial5writeEPKc
+ *fill*         0x08007dbe        0x2 00
  .text._ZN9USBSerial5beginEv
-                0x08007db0       0x2c build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
-                0x08007db0                _ZN9USBSerial5beginEv
+                0x08007dc0       0x2c build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
+                0x08007dc0                _ZN9USBSerial5beginEv
  .text._ZL6rxHookjPv
-                0x08007ddc       0x90 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
+                0x08007dec       0x90 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
  .text._GLOBAL__I__ZN9USBSerialC2Ev
-                0x08007e6c        0xc build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
+                0x08007e7c        0xc build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
  .text._ZL10wait_resetv
-                0x08007e78       0x10 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
+                0x08007e88       0x10 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
  .text._Z11digitalReadh
-                0x08007e88       0x2c build//Users/davidcranor/Documents/libmaple/wirish/wirish_digital.o
-                0x08007e88                _Z11digitalReadh
+                0x08007e98       0x2c build//Users/davidcranor/Documents/libmaple/wirish/wirish_digital.o
+                0x08007e98                _Z11digitalReadh
  .text._Z12digitalWritehh
-                0x08007eb4       0x30 build//Users/davidcranor/Documents/libmaple/wirish/wirish_digital.o
-                0x08007eb4                _Z12digitalWritehh
+                0x08007ec4       0x30 build//Users/davidcranor/Documents/libmaple/wirish/wirish_digital.o
+                0x08007ec4                _Z12digitalWritehh
  .text._Z17delayMicrosecondsj
-                0x08007ee4        0xe build//Users/davidcranor/Documents/libmaple/wirish/wirish_time.o
-                0x08007ee4                _Z17delayMicrosecondsj
+                0x08007ef4        0xe build//Users/davidcranor/Documents/libmaple/wirish/wirish_time.o
+                0x08007ef4                _Z17delayMicrosecondsj
  .text._Z5delaym
-                0x08007ef2       0x18 build//Users/davidcranor/Documents/libmaple/wirish/wirish_time.o
-                0x08007ef2                _Z5delaym
+                0x08007f02       0x18 build//Users/davidcranor/Documents/libmaple/wirish/wirish_time.o
+                0x08007f02                _Z5delaym
  .text._ZN6wirish4priv15board_reset_pllEv
-                0x08007f0a        0x2 build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/boards_setup.o
-                0x08007f0a                _ZN6wirish4priv15board_reset_pllEv
+                0x08007f1a        0x2 build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/boards_setup.o
+                0x08007f1a                _ZN6wirish4priv15board_reset_pllEv
  .text._ZN6wirish4priv11series_initEv
-                0x08007f0c        0x4 build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/boards_setup.o
-                0x08007f0c                _ZN6wirish4priv11series_initEv
- .text._ZN6wirish4priv15board_setup_usbEv
-                0x08007f10        0xc build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/boards_setup.o
-                0x08007f10                _ZN6wirish4priv15board_setup_usbEv
- .text._ZN6wirish4priv16board_setup_gpioEv
                 0x08007f1c        0x4 build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/boards_setup.o
-                0x08007f1c                _ZN6wirish4priv16board_setup_gpioEv
+                0x08007f1c                _ZN6wirish4priv11series_initEv
+ .text._ZN6wirish4priv15board_setup_usbEv
+                0x08007f20        0xc build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/boards_setup.o
+                0x08007f20                _ZN6wirish4priv15board_setup_usbEv
+ .text._ZN6wirish4priv16board_setup_gpioEv
+                0x08007f2c        0x4 build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/boards_setup.o
+                0x08007f2c                _ZN6wirish4priv16board_setup_gpioEv
  .text._ZN6wirish4priv28board_setup_clock_prescalersEv
-                0x08007f20       0x20 build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/boards_setup.o
-                0x08007f20                _ZN6wirish4priv28board_setup_clock_prescalersEv
+                0x08007f30       0x20 build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/boards_setup.o
+                0x08007f30                _ZN6wirish4priv28board_setup_clock_prescalersEv
  .text._Z7pinModeh13WiringPinMode
-                0x08007f40       0x88 build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/wirish_digital.o
-                0x08007f40                _Z7pinModeh13WiringPinMode
+                0x08007f50       0x88 build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/wirish_digital.o
+                0x08007f50                _Z7pinModeh13WiringPinMode
  .text.afio_cfg_debug_ports
-                0x08007fc8       0x14 build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/wirish_debug.o
+                0x08007fd8       0x14 build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/wirish_debug.o
  .text._Z17disableDebugPortsv
-                0x08007fdc        0x8 build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/wirish_debug.o
-                0x08007fdc                _Z17disableDebugPortsv
+                0x08007fec        0x8 build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/wirish_debug.o
+                0x08007fec                _Z17disableDebugPortsv
  .text._Z9boardInitv
-                0x08007fe4        0x4 build//Users/davidcranor/Documents/libmaple/wirish/boards/maple_mini/board.o
-                0x08007fe4                _Z9boardInitv
+                0x08007ff4        0x4 build//Users/davidcranor/Documents/libmaple/wirish/boards/maple_mini/board.o
+                0x08007ff4                _Z9boardInitv
  .text._GLOBAL__I__Z9boardInitv
-                0x08007fe8      0x118 build//Users/davidcranor/Documents/libmaple/wirish/boards/maple_mini/board.o
+                0x08007ff8      0x118 build//Users/davidcranor/Documents/libmaple/wirish/boards/maple_mini/board.o
  .text._ZN8WireBase5beginEh
-                0x08008100       0x14 build//Users/davidcranor/Documents/libmaple/libraries/Wire/WireBase.o
-                0x08008100                _ZN8WireBase5beginEh
+                0x08008110       0x14 build//Users/davidcranor/Documents/libmaple/libraries/Wire/WireBase.o
+                0x08008110                _ZN8WireBase5beginEh
  .text._ZN8WireBaseC2Ev
-                0x08008114        0xc build//Users/davidcranor/Documents/libmaple/libraries/Wire/HardWire.o
-                0x08008114                _ZN8WireBaseC2Ev
+                0x08008124        0xc build//Users/davidcranor/Documents/libmaple/libraries/Wire/HardWire.o
+                0x08008124                _ZN8WireBaseC2Ev
  .text._ZN8WireBaseD2Ev
-                0x08008120        0xc build//Users/davidcranor/Documents/libmaple/libraries/Wire/HardWire.o
-                0x08008120                _ZN8WireBaseD2Ev
+                0x08008130        0xc build//Users/davidcranor/Documents/libmaple/libraries/Wire/HardWire.o
+                0x08008130                _ZN8WireBaseD2Ev
  .text._ZN7TwoWireC1Ehhh
-                0x0800812c       0x28 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
-                0x0800812c                _ZN7TwoWireC1Ehhh
+                0x0800813c       0x28 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+                0x0800813c                _ZN7TwoWireC1Ehhh
  .text._ZN7TwoWireD1Ev
-                0x08008154       0x20 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
-                0x08008154                _ZN7TwoWireD1Ev
+                0x08008164       0x20 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+                0x08008164                _ZN7TwoWireD1Ev
  .text._ZN7TwoWire7set_sdaEb
-                0x08008174       0x18 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
-                0x08008174                _ZN7TwoWire7set_sdaEb
+                0x08008184       0x18 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+                0x08008184                _ZN7TwoWire7set_sdaEb
  .text._ZN7TwoWire7set_sclEb
-                0x0800818c       0x30 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
-                0x0800818c                _ZN7TwoWire7set_sclEb
+                0x0800819c       0x30 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+                0x0800819c                _ZN7TwoWire7set_sclEb
  .text._ZN7TwoWire5beginEh
-                0x080081bc       0x3e build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
-                0x080081bc                _ZN7TwoWire5beginEh
+                0x080081cc       0x3e build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+                0x080081cc                _ZN7TwoWire5beginEh
  .text._ZN7TwoWire13i2c_shift_outEh
-                0x080081fa       0x2c build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
-                0x080081fa                _ZN7TwoWire13i2c_shift_outEh
+                0x0800820a       0x2c build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+                0x0800820a                _ZN7TwoWire13i2c_shift_outEh
  .text._ZN7TwoWire12i2c_shift_inEv
-                0x08008226       0x34 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
-                0x08008226                _ZN7TwoWire12i2c_shift_inEv
+                0x08008236       0x34 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+                0x08008236                _ZN7TwoWire12i2c_shift_inEv
  .text._ZN7TwoWire13i2c_send_nackEv
-                0x0800825a       0x1e build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
-                0x0800825a                _ZN7TwoWire13i2c_send_nackEv
+                0x0800826a       0x1e build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+                0x0800826a                _ZN7TwoWire13i2c_send_nackEv
  .text._ZN7TwoWire12i2c_send_ackEv
-                0x08008278       0x1e build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
-                0x08008278                _ZN7TwoWire12i2c_send_ackEv
+                0x08008288       0x1e build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+                0x08008288                _ZN7TwoWire12i2c_send_ackEv
  .text._ZN7TwoWire11i2c_get_ackEv
-                0x08008296       0x36 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
-                0x08008296                _ZN7TwoWire11i2c_get_ackEv
+                0x080082a6       0x36 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+                0x080082a6                _ZN7TwoWire11i2c_get_ackEv
  .text._ZN7TwoWire8i2c_stopEv
-                0x080082cc       0x1e build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
-                0x080082cc                _ZN7TwoWire8i2c_stopEv
+                0x080082dc       0x1e build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+                0x080082dc                _ZN7TwoWire8i2c_stopEv
  .text._ZN7TwoWire9i2c_startEv
-                0x080082ea       0x16 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
-                0x080082ea                _ZN7TwoWire9i2c_startEv
+                0x080082fa       0x16 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+                0x080082fa                _ZN7TwoWire9i2c_startEv
  .text._ZN7TwoWire7processEv
-                0x08008300       0x98 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
-                0x08008300                _ZN7TwoWire7processEv
+                0x08008310       0x98 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+                0x08008310                _ZN7TwoWire7processEv
  .text._GLOBAL__I__ZN7TwoWire7set_sclEb
-                0x08008398       0x2c build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+                0x080083a8       0x2c build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
  .text.__exc_svc
-                0x080083c4       0x24 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/port.o
-                0x080083c4                __exc_svc
+                0x080083d4       0x24 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/port.o
+                0x080083d4                __exc_svc
  .text.__exc_pendsv
-                0x080083e8       0x40 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/port.o
-                0x080083e8                __exc_pendsv
+                0x080083f8       0x40 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/port.o
+                0x080083f8                __exc_pendsv
  .text.vTaskSwitchContext
-                0x08008428       0xf0 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/tasks.o
-                0x08008428                vTaskSwitchContext
+                0x08008438       0xf0 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/tasks.o
+                0x08008438                vTaskSwitchContext
  .text.vApplicationStackOverflowHook
-                0x08008518        0x2 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
-                0x08008518                vApplicationStackOverflowHook
+                0x08008528        0x2 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
+                0x08008528                vApplicationStackOverflowHook
  .text._ZN7MCP2035C1Ev
-                0x0800851a        0x2 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x0800851a                _ZN7MCP2035C1Ev
+                0x0800852a        0x2 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x0800852a                _ZN7MCP2035C1Ev
  .text._ZN7MCP203516computeRowParityEt
-                0x0800851c       0x18 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x0800851c                _ZN7MCP203516computeRowParityEt
+                0x0800852c       0x18 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x0800852c                _ZN7MCP203516computeRowParityEt
  .text._ZN7MCP203513writeRegisterEhh
-                0x08008534       0x94 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x08008534                _ZN7MCP203513writeRegisterEhh
+                0x08008544       0x94 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x08008544                _ZN7MCP203513writeRegisterEhh
  .text._ZN7MCP203511sendCommandEh
-                0x080085c8       0xb0 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x080085c8                _ZN7MCP203511sendCommandEh
+                0x080085d8       0xb0 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x080085d8                _ZN7MCP203511sendCommandEh
  .text._ZN7MCP20359softResetEv
-                0x08008678        0x6 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x08008678                _ZN7MCP20359softResetEv
+                0x08008688        0x6 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x08008688                _ZN7MCP20359softResetEv
  .text._ZN7MCP203512readRegisterEh
-                0x0800867e      0x124 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x0800867e                _ZN7MCP203512readRegisterEh
- *fill*         0x080087a2        0x2 00
+                0x0800868e      0x124 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x0800868e                _ZN7MCP203512readRegisterEh
+ *fill*         0x080087b2        0x2 00
  .text._ZN7MCP203518updateColumnParityEv
-                0x080087a4       0xb4 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x080087a4                _ZN7MCP203518updateColumnParityEv
+                0x080087b4       0xb4 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x080087b4                _ZN7MCP203518updateColumnParityEv
  .text._ZN7MCP203514clearRegistersEv
-                0x08008858       0x48 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x08008858                _ZN7MCP203514clearRegistersEv
+                0x08008868       0x48 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x08008868                _ZN7MCP203514clearRegistersEv
  .text._ZN7MCP203525setMinimumModulationDepthEh
-                0x080088a0       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x080088a0                _ZN7MCP203525setMinimumModulationDepthEh
+                0x080088b0       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x080088b0                _ZN7MCP203525setMinimumModulationDepthEh
  .text._ZN7MCP203520setDemodulatorOutputEh
-                0x080088c2       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x080088c2                _ZN7MCP203520setDemodulatorOutputEh
+                0x080088d2       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x080088d2                _ZN7MCP203520setDemodulatorOutputEh
  .text._ZN7MCP203523setSensitivityReductionEh
-                0x080088e4       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x080088e4                _ZN7MCP203523setSensitivityReductionEh
+                0x080088f4       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x080088f4                _ZN7MCP203523setSensitivityReductionEh
  .text._ZN7MCP203521setCarrierClockDivideEh
-                0x08008906       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x08008906                _ZN7MCP203521setCarrierClockDivideEh
+                0x08008916       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x08008916                _ZN7MCP203521setCarrierClockDivideEh
  .text._ZN7MCP203513setRSSIMosfetEh
-                0x08008928       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x08008928                _ZN7MCP203513setRSSIMosfetEh
+                0x08008938       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x08008938                _ZN7MCP203513setRSSIMosfetEh
  .text._ZN7MCP203512setTuningCapEh
-                0x0800894a       0x1e build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x0800894a                _ZN7MCP203512setTuningCapEh
+                0x0800895a       0x1e build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x0800895a                _ZN7MCP203512setTuningCapEh
  .text._ZN7MCP203519setLFDATAOutputTypeEh
-                0x08008968       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x08008968                _ZN7MCP203519setLFDATAOutputTypeEh
+                0x08008978       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x08008978                _ZN7MCP203519setLFDATAOutputTypeEh
  .text._ZN7MCP203515setInputChannelEh
-                0x0800898a       0x1e build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x0800898a                _ZN7MCP203515setInputChannelEh
+                0x0800899a       0x1e build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x0800899a                _ZN7MCP203515setInputChannelEh
  .text._ZN7MCP203515setAlertTriggerEh
-                0x080089a8       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x080089a8                _ZN7MCP203515setAlertTriggerEh
+                0x080089b8       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x080089b8                _ZN7MCP203515setAlertTriggerEh
  .text._ZN7MCP203522setOutputEnableLowTimeEh
-                0x080089ca       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x080089ca                _ZN7MCP203522setOutputEnableLowTimeEh
+                0x080089da       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x080089da                _ZN7MCP203522setOutputEnableLowTimeEh
  .text._ZN7MCP203523setOutputEnableHighTimeEh
-                0x080089ec       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x080089ec                _ZN7MCP203523setOutputEnableHighTimeEh
+                0x080089fc       0x22 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x080089fc                _ZN7MCP203523setOutputEnableHighTimeEh
  .text._ZN7MCP20355setupEv
-                0x08008a0e       0x70 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x08008a0e                _ZN7MCP20355setupEv
+                0x08008a1e       0x70 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x08008a1e                _ZN7MCP20355setupEv
  .text._ZN7MCP20355beginEhhh
-                0x08008a7e       0x3a build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
-                0x08008a7e                _ZN7MCP20355beginEhhh
- .text._Z7premainv
-                0x08008ab8        0x4 build/main.o
-                0x08008ab8                _Z7premainv
+                0x08008a8e       0x3a build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x08008a8e                _ZN7MCP20355beginEhhh
  .text._Z14processSamplesPhhh
-                0x08008abc       0x98 build/main.o
-                0x08008abc                _Z14processSamplesPhhh
+                0x08008ac8       0x74 build/main.o
+                0x08008ac8                _Z14processSamplesPhhh
+ .text._Z7premainv
+                0x08008b3c        0x4 build/main.o
+                0x08008b3c                _Z7premainv
  .text._Z13beginSamplingv
-                0x08008b54        0xc build/main.o
-                0x08008b54                _Z13beginSamplingv
+                0x08008b40        0xc build/main.o
+                0x08008b40                _Z13beginSamplingv
  .text._Z13resetSamplingv
-                0x08008b60       0x38 build/main.o
-                0x08008b60                _Z13resetSamplingv
+                0x08008b4c       0x38 build/main.o
+                0x08008b4c                _Z13resetSamplingv
  .text._Z18handler_sampleTimev
-                0x08008b98       0x58 build/main.o
-                0x08008b98                _Z18handler_sampleTimev
+                0x08008b84       0x58 build/main.o
+                0x08008b84                _Z18handler_sampleTimev
  .text._GLOBAL__I_debugPinState
-                0x08008bf0       0x1c build/main.o
+                0x08008bdc       0x1c build/main.o
  .text._Z15initSampleTimerv
-                0x08008c0c       0x44 build/main.o
-                0x08008c0c                _Z15initSampleTimerv
- .text.main     0x08008c50       0x90 build/main.o
-                0x08008c50                main
+                0x08008bf8       0x44 build/main.o
+                0x08008bf8                _Z15initSampleTimerv
+ .text.main     0x08008c3c       0x94 build/main.o
+                0x08008c3c                main
  .text.__aeabi_atexit
-                0x08008ce0        0xc /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
-                0x08008ce0                __aeabi_atexit
- .text          0x08008cec       0x2c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
-                0x08008cec                __aeabi_uldivmod
- .text          0x08008d18       0x58 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
-                0x08008d18                __gnu_uldivmod_helper
-                0x08008d44                __gnu_ldivmod_helper
- .text          0x08008d70        0x4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
-                0x08008d70                __aeabi_ldiv0
-                0x08008d70                __aeabi_idiv0
- .text          0x08008d74      0x364 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
-                0x08008d74                __divdi3
- .text          0x080090d8      0x300 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
-                0x080090d8                __udivdi3
- .text          0x080093d8      0x278 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
-                0x080093d8                __udivsi3
-                0x080093d8                __aeabi_uidiv
-                0x08009634                __aeabi_uidivmod
+                0x08008cd0        0xc /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
+                0x08008cd0                __aeabi_atexit
+ .text          0x08008cdc       0x2c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
+                0x08008cdc                __aeabi_uldivmod
+ .text          0x08008d08       0x58 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+                0x08008d08                __gnu_uldivmod_helper
+                0x08008d34                __gnu_ldivmod_helper
+ .text          0x08008d60        0x4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
+                0x08008d60                __aeabi_ldiv0
+                0x08008d60                __aeabi_idiv0
+ .text          0x08008d64      0x364 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+                0x08008d64                __divdi3
+ .text          0x080090c8      0x300 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+                0x080090c8                __udivdi3
+ .text          0x080093c8      0x278 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
+                0x080093c8                __udivsi3
+                0x080093c8                __aeabi_uidiv
+                0x08009624                __aeabi_uidivmod
  .text.__cxa_atexit
-                0x08009650       0x16 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-cxa_atexit.o)
-                0x08009650                __cxa_atexit
- *fill*         0x08009666        0x2 00
- .text.__errno  0x08009668        0xc /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-errno.o)
-                0x08009668                __errno
+                0x08009640       0x16 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-cxa_atexit.o)
+                0x08009640                __cxa_atexit
+ *fill*         0x08009656        0x2 00
+ .text.__errno  0x08009658        0xc /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-errno.o)
+                0x08009658                __errno
  .text.__libc_init_array
-                0x08009674       0x4c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-init.o)
-                0x08009674                __libc_init_array
- .text.memcmp   0x080096c0       0x22 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memcmp.o)
-                0x080096c0                memcmp
- .text.strlen   0x080096e2       0x10 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strlen.o)
-                0x080096e2                strlen
- *fill*         0x080096f2        0x2 00
+                0x08009664       0x4c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-init.o)
+                0x08009664                __libc_init_array
+ .text.memcmp   0x080096b0       0x22 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memcmp.o)
+                0x080096b0                memcmp
+ .text.strlen   0x080096d2       0x10 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strlen.o)
+                0x080096d2                strlen
+ *fill*         0x080096e2        0x2 00
  .text.__register_exitproc
-                0x080096f4       0xb8 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-__atexit.o)
-                0x080096f4                __register_exitproc
+                0x080096e4       0xb8 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-__atexit.o)
+                0x080096e4                __register_exitproc
  .text._malloc_trim_r
-                0x080097ac       0x98 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-freer.o)
-                0x080097ac                _malloc_trim_r
- .text._free_r  0x08009844      0x19c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-freer.o)
-                0x08009844                _free_r
- .text.malloc   0x080099e0       0x10 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-malloc.o)
-                0x080099e0                malloc
+                0x0800979c       0x98 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-freer.o)
+                0x0800979c                _malloc_trim_r
+ .text._free_r  0x08009834      0x19c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-freer.o)
+                0x08009834                _free_r
+ .text.malloc   0x080099d0       0x10 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-malloc.o)
+                0x080099d0                malloc
  .text._malloc_r
-                0x080099f0      0x424 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mallocr.o)
-                0x080099f0                _malloc_r
+                0x080099e0      0x424 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mallocr.o)
+                0x080099e0                _malloc_r
  .text.__malloc_lock
-                0x08009e14        0x2 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mlock.o)
-                0x08009e14                __malloc_lock
+                0x08009e04        0x2 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mlock.o)
+                0x08009e04                __malloc_lock
  .text.__malloc_unlock
-                0x08009e16        0x2 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mlock.o)
-                0x08009e16                __malloc_unlock
- .text._sbrk_r  0x08009e18       0x24 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-sbrkr.o)
-                0x08009e18                _sbrk_r
+                0x08009e06        0x2 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mlock.o)
+                0x08009e06                __malloc_unlock
+ .text._sbrk_r  0x08009e08       0x24 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-sbrkr.o)
+                0x08009e08                _sbrk_r
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
@@ -2329,69 +2329,69 @@ END GROUP
  *(.gcc_except_table)
  *(.eh_frame_hdr)
  *(.eh_frame)
-                0x08009e3c                . = ALIGN (0x4)
+                0x08009e2c                . = ALIGN (0x4)
  *(.init)
- .init          0x08009e3c        0x4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
-                0x08009e3c                _init
- .init          0x08009e40        0x8 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
-                0x08009e48                . = ALIGN (0x4)
-                0x08009e48                __preinit_array_start = .
+ .init          0x08009e2c        0x4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+                0x08009e2c                _init
+ .init          0x08009e30        0x8 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+                0x08009e38                . = ALIGN (0x4)
+                0x08009e38                __preinit_array_start = .
  *(.preinit_array)
-                0x08009e48                __preinit_array_end = .
-                0x08009e48                . = ALIGN (0x4)
-                0x08009e48                __init_array_start = .
+                0x08009e38                __preinit_array_end = .
+                0x08009e38                . = ALIGN (0x4)
+                0x08009e38                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x08009e48        0x4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
- .init_array    0x08009e4c        0x4 build//Users/davidcranor/Documents/libmaple/wirish/HardwareSerial.o
- .init_array    0x08009e50        0x4 build//Users/davidcranor/Documents/libmaple/wirish/HardwareTimer.o
- .init_array    0x08009e54        0x4 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
- .init_array    0x08009e58        0x4 build//Users/davidcranor/Documents/libmaple/wirish/boards/maple_mini/board.o
- .init_array    0x08009e5c        0x4 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
- .init_array    0x08009e60        0x8 build/main.o
-                0x08009e68                __init_array_end = .
-                0x08009e68                . = ALIGN (0x4)
+ .init_array    0x08009e38        0x4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .init_array    0x08009e3c        0x4 build//Users/davidcranor/Documents/libmaple/wirish/HardwareSerial.o
+ .init_array    0x08009e40        0x4 build//Users/davidcranor/Documents/libmaple/wirish/HardwareTimer.o
+ .init_array    0x08009e44        0x4 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
+ .init_array    0x08009e48        0x4 build//Users/davidcranor/Documents/libmaple/wirish/boards/maple_mini/board.o
+ .init_array    0x08009e4c        0x4 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+ .init_array    0x08009e50        0x8 build/main.o
+                0x08009e58                __init_array_end = .
+                0x08009e58                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x08009e68                . = ALIGN (0x4)
+                0x08009e58                . = ALIGN (0x4)
  *(.fini)
- .fini          0x08009e68        0x4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
-                0x08009e68                _fini
- .fini          0x08009e6c        0x8 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
-                0x08009e74                . = ALIGN (0x4)
-                0x08009e74                __fini_array_start = .
+ .fini          0x08009e58        0x4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+                0x08009e58                _fini
+ .fini          0x08009e5c        0x8 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+                0x08009e64                . = ALIGN (0x4)
+                0x08009e64                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x08009e74        0x4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .fini_array    0x08009e64        0x4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
  *(SORT(.fini_array.*))
-                0x08009e78                __fini_array_end = .
+                0x08009e68                __fini_array_end = .
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
 
-.v4_bx          0x08009e78        0x0
+.v4_bx          0x08009e68        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.text.align     0x08009e78        0x0
-                0x08009e78                . = ALIGN (0x8)
-                0x08009e78                __text_end__ = .
-                0x08009e78                __exidx_start = .
+.text.align     0x08009e68        0x0
+                0x08009e68                . = ALIGN (0x8)
+                0x08009e68                __text_end__ = .
+                0x08009e68                __exidx_start = .
 
-.ARM.exidx      0x08009e78        0x8
+.ARM.exidx      0x08009e68        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x08009e78        0x8 build//Users/davidcranor/Documents/libmaple/wirish/start.o
+ .ARM.exidx     0x08009e68        0x8 build//Users/davidcranor/Documents/libmaple/wirish/start.o
  .ARM.exidx.text.__aeabi_atexit
-                0x08009e80        0x0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
+                0x08009e70        0x0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
                                   0x8 (size before relaxing)
- .ARM.exidx     0x08009e80        0x0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .ARM.exidx     0x08009e70        0x0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
                                   0x8 (size before relaxing)
- .ARM.exidx     0x08009e80        0x0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .ARM.exidx     0x08009e70        0x0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
                                   0x8 (size before relaxing)
-                0x08009e80                __exidx_end = .
+                0x08009e70                __exidx_end = .
 
-.data           0x20000c00      0xaa8 load address 0x08009e80
+.data           0x20000c00      0xaa8 load address 0x08009e70
                 0x20000c00                . = ALIGN (0x8)
                 0x20000c00                __data_start__ = .
  *(.got.plt)
@@ -2500,90 +2500,90 @@ END GROUP
                 0x200016a8                . = ALIGN (0x8)
                 0x200016a8                __data_end__ = .
 
-.jcr            0x200016a8        0x0 load address 0x0800a928
+.jcr            0x200016a8        0x0 load address 0x0800a918
  .jcr           0x200016a8        0x0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
 
-.rodata         0x0800a928      0x544
+.rodata         0x0800a918      0x544
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.str1.1
-                0x0800a928       0x8f build//Users/davidcranor/Documents/libmaple/libmaple/timer.o
+                0x0800a918       0x8f build//Users/davidcranor/Documents/libmaple/libmaple/timer.o
  .rodata.str1.1
-                0x0800a9b7       0x3f build//Users/davidcranor/Documents/libmaple/libmaple/util.o
+                0x0800a9a7       0x3f build//Users/davidcranor/Documents/libmaple/libmaple/util.o
                                  0x42 (size before relaxing)
  .rodata.str1.1
-                0x0800a9f6       0x71 build//Users/davidcranor/Documents/libmaple/libmaple/i2c.o
+                0x0800a9e6       0x71 build//Users/davidcranor/Documents/libmaple/libmaple/i2c.o
                                  0x73 (size before relaxing)
  .rodata.str1.1
-                0x0800aa67       0x55 build//Users/davidcranor/Documents/libmaple/libmaple/usb/stm32f1/usb.o
+                0x0800aa57       0x55 build//Users/davidcranor/Documents/libmaple/libmaple/usb/stm32f1/usb.o
  .rodata.usbVcomDescriptor_iProduct
-                0x0800aabc        0xc build//Users/davidcranor/Documents/libmaple/libmaple/usb/stm32f1/usb_cdcacm.o
+                0x0800aaac        0xc build//Users/davidcranor/Documents/libmaple/libmaple/usb/stm32f1/usb_cdcacm.o
  .rodata.usbVcomDescriptor_iManufacturer
-                0x0800aac8       0x14 build//Users/davidcranor/Documents/libmaple/libmaple/usb/stm32f1/usb_cdcacm.o
+                0x0800aab8       0x14 build//Users/davidcranor/Documents/libmaple/libmaple/usb/stm32f1/usb_cdcacm.o
  .rodata.usbVcomDescriptor_Device
-                0x0800aadc       0x14 build//Users/davidcranor/Documents/libmaple/libmaple/usb/stm32f1/usb_cdcacm.o
+                0x0800aacc       0x14 build//Users/davidcranor/Documents/libmaple/libmaple/usb/stm32f1/usb_cdcacm.o
  .rodata.usbVcomDescriptor_Config
-                0x0800aaf0       0x44 build//Users/davidcranor/Documents/libmaple/libmaple/usb/stm32f1/usb_cdcacm.o
+                0x0800aae0       0x44 build//Users/davidcranor/Documents/libmaple/libmaple/usb/stm32f1/usb_cdcacm.o
  .rodata.usbVcomDescriptor_LangID
-                0x0800ab34        0x4 build//Users/davidcranor/Documents/libmaple/libmaple/usb/stm32f1/usb_cdcacm.o
+                0x0800ab24        0x4 build//Users/davidcranor/Documents/libmaple/libmaple/usb/stm32f1/usb_cdcacm.o
  .rodata.CSWTCH.39
-                0x0800ab38        0x8 build//Users/davidcranor/Documents/libmaple/libmaple/usb/stm32f1/usb_cdcacm.o
- .rodata.GPIOA  0x0800ab40        0x4 build//Users/davidcranor/Documents/libmaple/libmaple/stm32f1/gpio.o
-                0x0800ab40                GPIOA
- .rodata.GPIOB  0x0800ab44        0x4 build//Users/davidcranor/Documents/libmaple/libmaple/stm32f1/gpio.o
-                0x0800ab44                GPIOB
- .rodata.GPIOC  0x0800ab48        0x4 build//Users/davidcranor/Documents/libmaple/libmaple/stm32f1/gpio.o
-                0x0800ab48                GPIOC
+                0x0800ab28        0x8 build//Users/davidcranor/Documents/libmaple/libmaple/usb/stm32f1/usb_cdcacm.o
+ .rodata.GPIOA  0x0800ab30        0x4 build//Users/davidcranor/Documents/libmaple/libmaple/stm32f1/gpio.o
+                0x0800ab30                GPIOA
+ .rodata.GPIOB  0x0800ab34        0x4 build//Users/davidcranor/Documents/libmaple/libmaple/stm32f1/gpio.o
+                0x0800ab34                GPIOB
+ .rodata.GPIOC  0x0800ab38        0x4 build//Users/davidcranor/Documents/libmaple/libmaple/stm32f1/gpio.o
+                0x0800ab38                GPIOC
  .rodata.masks.1604
-                0x0800ab4c       0x14 build//Users/davidcranor/Documents/libmaple/libmaple/stm32f1/rcc.o
+                0x0800ab3c       0x14 build//Users/davidcranor/Documents/libmaple/libmaple/stm32f1/rcc.o
  .rodata.str1.1
-                0x0800ab60       0x93 build//Users/davidcranor/Documents/libmaple/libmaple/stm32f1/rcc.o
- *fill*         0x0800abf3        0x1 00
+                0x0800ab50       0x93 build//Users/davidcranor/Documents/libmaple/libmaple/stm32f1/rcc.o
+ *fill*         0x0800abe3        0x1 00
  .rodata.rcc_dev_table
-                0x0800abf4       0x5c build//Users/davidcranor/Documents/libmaple/libmaple/stm32f1/rcc.o
-                0x0800abf4                rcc_dev_table
+                0x0800abe4       0x5c build//Users/davidcranor/Documents/libmaple/libmaple/stm32f1/rcc.o
+                0x0800abe4                rcc_dev_table
  .rodata.str1.1
-                0x0800ac50       0x4b build//Users/davidcranor/Documents/libmaple/libmaple/stm32f1/usart.o
+                0x0800ac40       0x4b build//Users/davidcranor/Documents/libmaple/libmaple/stm32f1/usart.o
  .rodata.str1.1
-                0x0800ac9b       0x65 build//Users/davidcranor/Documents/libmaple/wirish/HardwareSerial.o
+                0x0800ac8b       0x65 build//Users/davidcranor/Documents/libmaple/wirish/HardwareSerial.o
  .rodata._ZTV14HardwareSerial
-                0x0800ad00       0x18 build//Users/davidcranor/Documents/libmaple/wirish/HardwareSerial.o
-                0x0800ad00                _ZTV14HardwareSerial
+                0x0800acf0       0x18 build//Users/davidcranor/Documents/libmaple/wirish/HardwareSerial.o
+                0x0800acf0                _ZTV14HardwareSerial
  .rodata.str1.1
-                0x0800ad18       0x51 build//Users/davidcranor/Documents/libmaple/wirish/HardwareTimer.o
- *fill*         0x0800ad69        0x7 00
+                0x0800ad08       0x51 build//Users/davidcranor/Documents/libmaple/wirish/HardwareTimer.o
+ *fill*         0x0800ad59        0x7 00
  .rodata._ZTV5Print
-                0x0800ad70       0x18 build//Users/davidcranor/Documents/libmaple/wirish/Print.o
-                0x0800ad70                _ZTV5Print
+                0x0800ad60       0x18 build//Users/davidcranor/Documents/libmaple/wirish/Print.o
+                0x0800ad60                _ZTV5Print
  .rodata.str1.1
-                0x0800ad88       0x3c build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
+                0x0800ad78       0x3c build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
                                  0x3e (size before relaxing)
- *fill*         0x0800adc4        0x4 00
+ *fill*         0x0800adb4        0x4 00
  .rodata._ZTV9USBSerial
-                0x0800adc8       0x18 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
-                0x0800adc8                _ZTV9USBSerial
+                0x0800adb8       0x18 build//Users/davidcranor/Documents/libmaple/wirish/usb_serial.o
+                0x0800adb8                _ZTV9USBSerial
  .rodata.str1.1
-                0x0800ade0       0x48 build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/wirish_digital.o
+                0x0800add0       0x48 build//Users/davidcranor/Documents/libmaple/wirish/stm32f1/wirish_digital.o
                                  0x4a (size before relaxing)
  .rodata._ZTV8WireBase
-                0x0800ae28       0x10 build//Users/davidcranor/Documents/libmaple/libraries/Wire/WireBase.o
-                0x0800ae28                _ZTV8WireBase
+                0x0800ae18       0x10 build//Users/davidcranor/Documents/libmaple/libraries/Wire/WireBase.o
+                0x0800ae18                _ZTV8WireBase
  .rodata._ZTV7TwoWire
-                0x0800ae38       0x10 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
-                0x0800ae38                _ZTV7TwoWire
+                0x0800ae28       0x10 build//Users/davidcranor/Documents/libmaple/libraries/Wire/Wire.o
+                0x0800ae28                _ZTV7TwoWire
  .rodata.ucExpectedStackBytes.3388
-                0x0800ae48       0x14 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/tasks.o
+                0x0800ae38       0x14 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/tasks.o
  .rodata._ZZN7MCP203518updateColumnParityEvE4C.31
-                0x0800ae5c        0x8 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+                0x0800ae4c        0x8 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
  .rodata.str1.1
                 0x00000000       0x48 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-impure.o)
                                   0x2 (size before relaxing)
  .rodata._global_impure_ptr
-                0x0800ae64        0x4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-impure.o)
-                0x0800ae64                _global_impure_ptr
+                0x0800ae54        0x4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-impure.o)
+                0x0800ae54                _global_impure_ptr
  *(.USER_FLASH)
-                0x0800ae68                . = ALIGN (0x4)
-                0x0800ae68                _lm_rom_img_cfgp = .
-                0x0800ae68        0x4 LONG 0x8009e80 LOADADDR (.data)
+                0x0800ae58                . = ALIGN (0x4)
+                0x0800ae58                _lm_rom_img_cfgp = .
+                0x0800ae58        0x4 LONG 0x8009e70 LOADADDR (.data)
                 [0x20001a28]                _lm_heap_start = DEFINED (_lm_heap_start)?_lm_heap_start:_end
                 [0x20005000]                _lm_heap_end = DEFINED (_lm_heap_end)?_lm_heap_end:__msp_init
 
@@ -3191,7 +3191,7 @@ END GROUP
  .debug_pubnames
                 0x00003880       0x20 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
 
-.debug_info     0x00000000    0x27693
+.debug_info     0x00000000    0x27676
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000       0x8f /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
  .debug_info    0x0000008f      0x55f build//Users/davidcranor/Documents/libmaple/libmaple/adc.o
@@ -3263,26 +3263,26 @@ END GROUP
  .debug_info    0x00022d7e       0x53 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/timers.o
  .debug_info    0x00022dd1     0x1017 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/tasks.o
  .debug_info    0x00023de8       0xf6 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
- .debug_info    0x00023ede      0xdd0 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
- .debug_info    0x00024cae     0x128b build/main.o
- .debug_info    0x00025f39       0xd2 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
- .debug_info    0x0002600b       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
- .debug_info    0x000260ca       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
- .debug_info    0x00026189       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
- .debug_info    0x00026248       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
- .debug_info    0x00026307       0xba /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
- .debug_info    0x000263c1       0xca /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
- .debug_info    0x0002648b       0xf4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
- .debug_info    0x0002657f       0xe2 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
- .debug_info    0x00026661       0xc0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
- .debug_info    0x00026721       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
- .debug_info    0x000267e0      0x665 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
- .debug_info    0x00026e45      0x63f /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
- .debug_info    0x00027484       0xc0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
- .debug_info    0x00027544       0xc0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
- .debug_info    0x00027604       0x8f /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .debug_info    0x00023ede      0xdd1 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+ .debug_info    0x00024caf     0x126d build/main.o
+ .debug_info    0x00025f1c       0xd2 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
+ .debug_info    0x00025fee       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
+ .debug_info    0x000260ad       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
+ .debug_info    0x0002616c       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
+ .debug_info    0x0002622b       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
+ .debug_info    0x000262ea       0xba /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
+ .debug_info    0x000263a4       0xca /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+ .debug_info    0x0002646e       0xf4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+ .debug_info    0x00026562       0xe2 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+ .debug_info    0x00026644       0xc0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x00026704       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
+ .debug_info    0x000267c3      0x665 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_info    0x00026e28      0x63f /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .debug_info    0x00027467       0xc0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
+ .debug_info    0x00027527       0xc0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
+ .debug_info    0x000275e7       0x8f /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
 
-.debug_abbrev   0x00000000     0x87d0
+.debug_abbrev   0x00000000     0x87c3
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0x12 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
  .debug_abbrev  0x00000012      0x1a1 build//Users/davidcranor/Documents/libmaple/libmaple/adc.o
@@ -3354,26 +3354,26 @@ END GROUP
  .debug_abbrev  0x000078f0       0x33 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/timers.o
  .debug_abbrev  0x00007923      0x253 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/tasks.o
  .debug_abbrev  0x00007b76       0x8e build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
- .debug_abbrev  0x00007c04      0x293 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
- .debug_abbrev  0x00007e97      0x3c6 build/main.o
- .debug_abbrev  0x0000825d       0x9c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
- .debug_abbrev  0x000082f9       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
- .debug_abbrev  0x0000830d       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
- .debug_abbrev  0x00008321       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
- .debug_abbrev  0x00008335       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
- .debug_abbrev  0x00008349       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
- .debug_abbrev  0x0000835d       0x66 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
- .debug_abbrev  0x000083c3       0x7c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
- .debug_abbrev  0x0000843f       0x6c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
- .debug_abbrev  0x000084ab       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
- .debug_abbrev  0x000084bf       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
- .debug_abbrev  0x000084d3      0x169 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
- .debug_abbrev  0x0000863c      0x15a /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
- .debug_abbrev  0x00008796       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
- .debug_abbrev  0x000087aa       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
- .debug_abbrev  0x000087be       0x12 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .debug_abbrev  0x00007c04      0x284 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+ .debug_abbrev  0x00007e88      0x3c8 build/main.o
+ .debug_abbrev  0x00008250       0x9c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
+ .debug_abbrev  0x000082ec       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
+ .debug_abbrev  0x00008300       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
+ .debug_abbrev  0x00008314       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
+ .debug_abbrev  0x00008328       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
+ .debug_abbrev  0x0000833c       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
+ .debug_abbrev  0x00008350       0x66 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+ .debug_abbrev  0x000083b6       0x7c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+ .debug_abbrev  0x00008432       0x6c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+ .debug_abbrev  0x0000849e       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x000084b2       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
+ .debug_abbrev  0x000084c6      0x169 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_abbrev  0x0000862f      0x15a /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x00008789       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x0000879d       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x000087b1       0x12 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
 
-.debug_line     0x00000000     0xfcf7
+.debug_line     0x00000000     0xfcf6
  *(.debug_line)
  .debug_line    0x00000000       0x6f /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
  .debug_line    0x0000006f      0x1c4 build//Users/davidcranor/Documents/libmaple/libmaple/adc.o
@@ -3446,23 +3446,23 @@ END GROUP
  .debug_line    0x0000d27f      0x7b6 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/tasks.o
  .debug_line    0x0000da35      0x666 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
  .debug_line    0x0000e09b      0x8c1 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
- .debug_line    0x0000e95c      0x687 build/main.o
- .debug_line    0x0000efe3       0xe5 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
- .debug_line    0x0000f0c8      0x20e /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
- .debug_line    0x0000f2d6      0x22e /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
- .debug_line    0x0000f504      0x114 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
- .debug_line    0x0000f618       0x8c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
- .debug_line    0x0000f6a4       0x77 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
- .debug_line    0x0000f71b       0x7b /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
- .debug_line    0x0000f796       0x82 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
- .debug_line    0x0000f818       0x79 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
- .debug_line    0x0000f891       0x75 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
- .debug_line    0x0000f906       0x88 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
- .debug_line    0x0000f98e       0xe1 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
- .debug_line    0x0000fa6f       0xd5 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
- .debug_line    0x0000fb44       0x98 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
- .debug_line    0x0000fbdc       0xa9 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
- .debug_line    0x0000fc85       0x72 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .debug_line    0x0000e95c      0x686 build/main.o
+ .debug_line    0x0000efe2       0xe5 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
+ .debug_line    0x0000f0c7      0x20e /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
+ .debug_line    0x0000f2d5      0x22e /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
+ .debug_line    0x0000f503      0x114 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
+ .debug_line    0x0000f617       0x8c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
+ .debug_line    0x0000f6a3       0x77 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
+ .debug_line    0x0000f71a       0x7b /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+ .debug_line    0x0000f795       0x82 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+ .debug_line    0x0000f817       0x79 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+ .debug_line    0x0000f890       0x75 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x0000f905       0x88 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
+ .debug_line    0x0000f98d       0xe1 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_line    0x0000fa6e       0xd5 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .debug_line    0x0000fb43       0x98 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
+ .debug_line    0x0000fbdb       0xa9 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
+ .debug_line    0x0000fc84       0x72 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
 
 .debug_frame    0x00000000     0x45f8
  *(.debug_frame)
@@ -3701,7 +3701,7 @@ END GROUP
  .debug_str     0x00009e65        0xa /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
                                 0x1cf (size before relaxing)
 
-.debug_loc      0x00000000     0xbeb4
+.debug_loc      0x00000000     0xbe20
  *(.debug_loc)
  .debug_loc     0x00000000       0x82 build//Users/davidcranor/Documents/libmaple/libmaple/adc.o
  .debug_loc     0x00000082       0xea build//Users/davidcranor/Documents/libmaple/libmaple/dac.o
@@ -3767,13 +3767,13 @@ END GROUP
  .debug_loc     0x00008ff3      0x732 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/queue.o
  .debug_loc     0x00009725      0xa32 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/tasks.o
  .debug_loc     0x0000a157      0x8d5 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
- .debug_loc     0x0000aa2c      0x29b build/main.o
- .debug_loc     0x0000acc7       0x44 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
- .debug_loc     0x0000ad0b       0x67 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
- .debug_loc     0x0000ad72       0x57 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
- .debug_loc     0x0000adc9      0x11e /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
- .debug_loc     0x0000aee7      0x7bb /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
- .debug_loc     0x0000b6a2      0x812 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .debug_loc     0x0000aa2c      0x207 build/main.o
+ .debug_loc     0x0000ac33       0x44 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
+ .debug_loc     0x0000ac77       0x67 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+ .debug_loc     0x0000acde       0x57 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+ .debug_loc     0x0000ad35      0x11e /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+ .debug_loc     0x0000ae53      0x7bb /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_loc     0x0000b60e      0x812 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
 
 .debug_macinfo  0x00000000   0x201c5f
  *(.debug_macinfo)
@@ -4274,7 +4274,7 @@ LOAD /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/
 LOAD /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
 OUTPUT(build/maple_mini.elf elf32-littlearm)
 
-.debug_ranges   0x00000000     0x2ad8
+.debug_ranges   0x00000000     0x2ae8
  .debug_ranges  0x00000000       0x20 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
  .debug_ranges  0x00000020       0x30 build//Users/davidcranor/Documents/libmaple/libmaple/adc.o
  .debug_ranges  0x00000050       0x30 build//Users/davidcranor/Documents/libmaple/libmaple/dac.o
@@ -4344,8 +4344,8 @@ OUTPUT(build/maple_mini.elf elf32-littlearm)
  .debug_ranges  0x000023c0      0x1e0 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/tasks.o
  .debug_ranges  0x000025a0       0x18 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
  .debug_ranges  0x000025b8      0x2a0 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
- .debug_ranges  0x00002858       0xb0 build/main.o
- .debug_ranges  0x00002908       0x18 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
- .debug_ranges  0x00002920       0xd0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
- .debug_ranges  0x000029f0       0xc8 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
- .debug_ranges  0x00002ab8       0x20 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .debug_ranges  0x00002858       0xc0 build/main.o
+ .debug_ranges  0x00002918       0x18 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
+ .debug_ranges  0x00002930       0xd0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_ranges  0x00002a00       0xc8 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .debug_ranges  0x00002ac8       0x20 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o

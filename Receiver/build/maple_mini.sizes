@@ -1,5 +1,5 @@
    text	   data	    bss	    dec	    hex	filename
-    578	      8	    207	    793	    319	build/main.o
+    546	      8	    207	    761	    2f9	build/main.o
     116	      0	      0	    116	     74	build/Users/davidcranor/Documents/libmaple/libmaple/adc.o
     184	      0	      0	    184	     b8	build/Users/davidcranor/Documents/libmaple/libmaple/dac.o
      34	      0	      0	     34	     22	build/Users/davidcranor/Documents/libmaple/libmaple/dma.o
@@ -74,4 +74,4 @@
      50	      0	      0	     50	     32	build/Users/davidcranor/Documents/libmaple/wirish/wirish_math.o
      68	      0	      0	     68	     44	build/Users/davidcranor/Documents/libmaple/wirish/wirish_shift.o
      38	      0	      0	     38	     26	build/Users/davidcranor/Documents/libmaple/wirish/wirish_time.o
-  33680	   1511	   9280	  44471	   adb7	(TOTALS)
+  33648	   1511	   9280	  44439	   ad97	(TOTALS)

@@ -130,11 +130,23 @@ int main()
                 delay(1);
             }
 
+            // for(int i = 0; i < NUM_SAMPLES; i++)
+            // {
+            //     Serial1.print(sampleArray[i], BIN);
+            // }
+            // Serial1.println();
+
             data = processSamples(sampleArray, PACKET_LENGTH, SAMPLES_PER_BIT);
+
+            if (data != 0)
+            {
+               Serial1.println(data, BIN); 
+            }
+            
 
             resetSampling();
 
-            delay(20);
+            //delay(20);
         }
     }
 }
@@ -289,7 +301,17 @@ uint16_t processSamples(uint8_t* samples, uint8_t packetLength, uint8_t samplesP
 
         } else {
             //Nothing happened, increment count
-            count++;
+
+            if(count > 2 * SAMPLES_PER_BIT)
+            {
+                return 0;
+            } else {
+
+                count++;
+
+            }
+
+            
         }
         
     }
@@ -299,11 +321,11 @@ uint16_t processSamples(uint8_t* samples, uint8_t packetLength, uint8_t samplesP
 
     for(uint8_t i = 0; i < packetLength; i++)
     {
-        Serial1.print(1 & (receivedData >> (packetLength - i)), BIN);
+        //Serial1.print(1 & (receivedData >> (packetLength - i)), BIN);
         //SerialUSB.print(1 & (receivedData >> (packetLength - i)), BIN);
     }
 
-    Serial1.println();
+    //Serial1.println();
     //SerialUSB.println();
 
     return receivedData;

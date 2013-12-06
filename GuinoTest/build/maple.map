@@ -3231,7 +3231,7 @@ END GROUP
  .debug_pubnames
                 0x00003a9d       0x20 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
 
-.debug_info     0x00000000    0x273ef
+.debug_info     0x00000000    0x273f1
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000       0x8f /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
  .debug_info    0x0000008f      0x55f build//Users/davidcranor/Documents/libmaple/libmaple/adc.o
@@ -3303,29 +3303,29 @@ END GROUP
  .debug_info    0x00022d67       0x53 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/timers.o
  .debug_info    0x00022dba     0x1017 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/tasks.o
  .debug_info    0x00023dd1       0xf6 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
- .debug_info    0x00023ec7      0xdcf build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
- .debug_info    0x00024c96      0x2f9 build//Users/davidcranor/Documents/libmaple/libraries/PlotSender/plotSender.o
- .debug_info    0x00024f8f      0x27d build//Users/davidcranor/Documents/libmaple/libraries/EasyTransfer/EasyTransfer.o
- .debug_info    0x0002520c      0x9ca build/main.o
- .debug_info    0x00025bd6       0xd2 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
- .debug_info    0x00025ca8       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
- .debug_info    0x00025d67       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
- .debug_info    0x00025e26       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
- .debug_info    0x00025ee5       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
- .debug_info    0x00025fa4       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpsf2.o)
- .debug_info    0x00026063       0xba /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
- .debug_info    0x0002611d       0xca /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
- .debug_info    0x000261e7       0xf4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
- .debug_info    0x000262db       0xe2 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
- .debug_info    0x000263bd       0xc0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
- .debug_info    0x0002647d       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
- .debug_info    0x0002653c      0x665 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
- .debug_info    0x00026ba1      0x63f /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
- .debug_info    0x000271e0       0xc0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
- .debug_info    0x000272a0       0xc0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
- .debug_info    0x00027360       0x8f /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .debug_info    0x00023ec7      0xdd1 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+ .debug_info    0x00024c98      0x2f9 build//Users/davidcranor/Documents/libmaple/libraries/PlotSender/plotSender.o
+ .debug_info    0x00024f91      0x27d build//Users/davidcranor/Documents/libmaple/libraries/EasyTransfer/EasyTransfer.o
+ .debug_info    0x0002520e      0x9ca build/main.o
+ .debug_info    0x00025bd8       0xd2 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
+ .debug_info    0x00025caa       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
+ .debug_info    0x00025d69       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
+ .debug_info    0x00025e28       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
+ .debug_info    0x00025ee7       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
+ .debug_info    0x00025fa6       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpsf2.o)
+ .debug_info    0x00026065       0xba /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
+ .debug_info    0x0002611f       0xca /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+ .debug_info    0x000261e9       0xf4 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+ .debug_info    0x000262dd       0xe2 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+ .debug_info    0x000263bf       0xc0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x0002647f       0xbf /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
+ .debug_info    0x0002653e      0x665 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_info    0x00026ba3      0x63f /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .debug_info    0x000271e2       0xc0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
+ .debug_info    0x000272a2       0xc0 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
+ .debug_info    0x00027362       0x8f /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
 
-.debug_abbrev   0x00000000     0x89c1
+.debug_abbrev   0x00000000     0x89c3
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0x12 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
  .debug_abbrev  0x00000012      0x1a1 build//Users/davidcranor/Documents/libmaple/libmaple/adc.o
@@ -3397,27 +3397,27 @@ END GROUP
  .debug_abbrev  0x000078dc       0x33 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/timers.o
  .debug_abbrev  0x0000790f      0x253 build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/utility/tasks.o
  .debug_abbrev  0x00007b62       0x8e build//Users/davidcranor/Documents/libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
- .debug_abbrev  0x00007bf0      0x282 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
- .debug_abbrev  0x00007e72      0x177 build//Users/davidcranor/Documents/libmaple/libraries/PlotSender/plotSender.o
- .debug_abbrev  0x00007fe9      0x159 build//Users/davidcranor/Documents/libmaple/libraries/EasyTransfer/EasyTransfer.o
- .debug_abbrev  0x00008142      0x2f8 build/main.o
- .debug_abbrev  0x0000843a       0x9c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
- .debug_abbrev  0x000084d6       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
- .debug_abbrev  0x000084ea       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
- .debug_abbrev  0x000084fe       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
- .debug_abbrev  0x00008512       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
- .debug_abbrev  0x00008526       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpsf2.o)
- .debug_abbrev  0x0000853a       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
- .debug_abbrev  0x0000854e       0x66 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
- .debug_abbrev  0x000085b4       0x7c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
- .debug_abbrev  0x00008630       0x6c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
- .debug_abbrev  0x0000869c       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
- .debug_abbrev  0x000086b0       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
- .debug_abbrev  0x000086c4      0x169 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
- .debug_abbrev  0x0000882d      0x15a /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
- .debug_abbrev  0x00008987       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
- .debug_abbrev  0x0000899b       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
- .debug_abbrev  0x000089af       0x12 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .debug_abbrev  0x00007bf0      0x284 build//Users/davidcranor/Documents/libmaple/libraries/MCP2035/MCP2035.o
+ .debug_abbrev  0x00007e74      0x177 build//Users/davidcranor/Documents/libmaple/libraries/PlotSender/plotSender.o
+ .debug_abbrev  0x00007feb      0x159 build//Users/davidcranor/Documents/libmaple/libraries/EasyTransfer/EasyTransfer.o
+ .debug_abbrev  0x00008144      0x2f8 build/main.o
+ .debug_abbrev  0x0000843c       0x9c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a(atexit_arm.o)
+ .debug_abbrev  0x000084d8       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
+ .debug_abbrev  0x000084ec       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
+ .debug_abbrev  0x00008500       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
+ .debug_abbrev  0x00008514       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
+ .debug_abbrev  0x00008528       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpsf2.o)
+ .debug_abbrev  0x0000853c       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
+ .debug_abbrev  0x00008550       0x66 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+ .debug_abbrev  0x000085b6       0x7c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+ .debug_abbrev  0x00008632       0x6c /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+ .debug_abbrev  0x0000869e       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x000086b2       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
+ .debug_abbrev  0x000086c6      0x169 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_abbrev  0x0000882f      0x15a /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x00008989       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x0000899d       0x14 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x000089b1       0x12 /Users/davidcranor/Documents/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
 
 .debug_line     0x00000000    0x10b52
  *(.debug_line)
