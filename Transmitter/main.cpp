@@ -53,7 +53,8 @@ cranor@mit.edu
 #define QUENCH_PIN 11  //Changed for design
 
  //uint16_t testData = 0b0101010101010101;
- uint16_t testData = 0b0001010101010101;
+ //uint16_t testData = 0b0001010101010101;
+ uint16_t testData = 0b0001111111000000;
  //uint16_t testData = 0xAAAA;
 
 HardwareTimer carrierTimer(2);

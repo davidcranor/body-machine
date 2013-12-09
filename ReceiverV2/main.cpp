@@ -67,7 +67,7 @@ cranor@mit.edu
 #define MCP_2035_RSSI_PIN 9
 
 #define BLUE 3
-#define GREEN 4
+#define RED 4
 
 #define DEBUG_PIN 21
 
@@ -99,6 +99,8 @@ struct SEND_DATA_STRUCTURE
   uint8_t agcsig;
   uint8_t modmin;
 
+  uint8_t led;
+
 };
 
 
@@ -116,7 +118,7 @@ uint16_t samplePointer;
 uint8_t currentSample;
 
 uint8_t sampleArray[NUM_SAMPLES];
-uint16_t data;
+uint16_t data = 0;
 
 void initSampleTimer();
 void handler_sampleTime();
@@ -128,16 +130,24 @@ uint16_t processSamples(uint8_t* samples, uint8_t packetLength, uint8_t samplesP
 
 uint8_t computeParity(uint16_t data);
 
+void readSettings();
+uint8_t stripRegister(uint8_t registerNumber, uint8_t offset, uint8_t mask);
+
 
 
 
 int main()
 {
     //For debugging
-    delay(3000);
+    //delay(3000);
+
+
     pinMode(DEBUG_PIN, OUTPUT);
     digitalWrite(DEBUG_PIN, LOW);
     debugPinState = 0;
+
+    pinMode(RED, OUTPUT);
+    pinMode(BLUE, OUTPUT);
 
     //Set up the timer
     initSampleTimer();
@@ -147,6 +157,7 @@ int main()
 
     //Serial port for wireless radio
     Serial1.begin(38400);
+    //Serial1.println("Hello!");
 
     //ET.begin(details(guino_data), &Serial1);  //Old version
     //ET.begin( (uint8_t*)&receiver_settings, 255, &Serial1);  //This one works, but buffer is 255 big.
@@ -157,17 +168,31 @@ int main()
 
     while(1)
     {
+        // digitalWrite(GREEN, HIGH);
+        // delay(100);
+        // digitalWrite(GREEN, LOW);
+        // delay(100);
+
         //First, check the serial port for commands
         while(Serial1.available())
         {
+            //uint8_t poop = Serial1.read();
+            //Serial1.println(poop, HEX);
+
+            //ET.receiveData();
+
             if(ET.receiveData())
             {
+                //Serial1.println("Hello!");
                 processCommands();
             }
         }
-
+        
         //Then, wait for data pin to go high (first incoming bit must be a 0)
+        if(digitalRead(MCP2035_IO_PIN))
         {
+            //digitalWrite(RED, HIGH);
+
             //Begin sampling, interrupt takes over from here
             beginSampling();
 
@@ -183,14 +208,53 @@ int main()
             // }
             // Serial1.println();
 
+            data = 0;
+
             data = processSamples(sampleArray, PACKET_LENGTH, SAMPLES_PER_BIT);
+
+            Serial1.println(data);
+            SerialUSB.println(data);
 
             resetSampling();
 
-            //delay(20);
+            //digitalWrite(RED, LOW);
         }
     }
 }
+
+void readSettings()
+{
+    receiver_settings.oeh = stripRegister(CONFIG_REGISTER_0, OUTPUT_ENABLE_FILTER_HIGH_BITS_OFFSET, OUTPUT_ENABLE_FILTER_HIGH_BITS_MASK);
+    receiver_settings.oel = stripRegister(CONFIG_REGISTER_0, OUTPUT_ENABLE_FILTER_LOW_BITS_OFFSET, OUTPUT_ENABLE_FILTER_LOW_BITS_MASK);
+    receiver_settings.alrtind = stripRegister(CONFIG_REGISTER_0, ALERT_TRIGGER_BITS_OFFSET, ALERT_TRIGGER_BITS_MASK);
+    receiver_settings.lcxen = stripRegister(CONFIG_REGISTER_0, INPUT_CHANNEL_SETTING_BITS_OFFSET, INPUT_CHANNEL_SETTING_BITS_MASK);
+
+    receiver_settings.datout = stripRegister(CONFIG_REGISTER_1, LFDATA_OUTPUT_BITS_OFFSET, LFDATA_OUTPUT_BITS_MASK);
+    receiver_settings.tunecap = stripRegister(CONFIG_REGISTER_1, TUNING_CAP_BITS_OFFSET, TUNING_CAP_BITS_MASK);
+
+    receiver_settings.rssifet = stripRegister(CONFIG_REGISTER_2, RSSI_PULL_DOWN_SETTING_OFFSET, RSSI_PULL_DOWN_SETTING_MASK);
+    receiver_settings.clkdiv = stripRegister(CONFIG_REGISTER_2, CARRIER_CLOCK_DIVIDE_BITS_OFFSET, CARRIER_CLOCK_DIVIDE_BITS_MASK);
+
+    receiver_settings.sensctl = stripRegister(CONFIG_REGISTER_4, INPUT_SENSITIVITY_REDUCTION_BITS_OFFSET, INPUT_SENSITIVITY_REDUCTION_BITS_MASK);
+
+    receiver_settings.agcsig = stripRegister(CONFIG_REGISTER_5, DEMOD_OUTPUT_AGC_DEPENDENT_BITS_OFFSET, DEMOD_OUTPUT_AGC_DEPENDENT_BITS_MASK);
+    receiver_settings.modmin = stripRegister(CONFIG_REGISTER_5, MIN_MOD_DEPTH_BITS_OFFSET, MIN_MOD_DEPTH_BITS_MASK);
+
+    receiver_settings.led = digitalRead(BLUE);
+}
+
+uint8_t stripRegister(uint8_t registerNumber, uint8_t offset, uint8_t mask)
+{
+    uint8_t result = 0;
+    uint8_t rawRegister = 0;
+
+    rawRegister = Receiver.readRegister(registerNumber);
+
+    result = (rawRegister & (mask ^ 0xFF) ) >> offset;
+
+    return result;
+}
+
 
 void initSampleTimer()
 {
@@ -279,6 +343,52 @@ void processCommands()
 {
     //ARE THESE SET UP CORRECTLY??
 
+
+    // while(1)
+    // {
+
+    // Serial1.print("OEH: ");
+    // Serial1.println(receiver_settings.oeh);
+
+    // Serial1.print("OEL: ");
+    // Serial1.println(receiver_settings.oel);
+
+    // Serial1.print("Alert trigger: ");
+    // Serial1.println(receiver_settings.alrtind);
+
+    // Serial1.print("Input Channel: ");
+    // Serial1.println(receiver_settings.lcxen);
+
+    // Serial1.print("LFDATA output type: ");
+    // Serial1.println(receiver_settings.datout);
+
+    // Serial1.print("Tuning cap: ");
+    // Serial1.println(receiver_settings.tunecap);
+
+    // Serial1.print("RSSI fet status: ");
+    // Serial1.println(receiver_settings.rssifet);
+
+    // Serial1.print("Carrier clock divide: ");
+    // Serial1.println(receiver_settings.clkdiv);
+
+    // Serial1.print("Sensitivity reduction: ");
+    // Serial1.println(receiver_settings.sensctl);
+
+    // Serial1.print("Demodulator output dependent: ");
+    // Serial1.println(receiver_settings.agcsig);
+
+    // Serial1.print("Min modulation depth: ");
+    // Serial1.println(receiver_settings.modmin);
+
+    // Serial1.print("LED status: ");
+    // Serial1.println(receiver_settings.led);
+
+    // digitalWrite(BLUE, receiver_settings.led);
+
+    // }
+
+
+
     //Reset and clear baseband registers
     Receiver.softReset();
     Receiver.clearRegisters();
@@ -295,7 +405,14 @@ void processCommands()
     Receiver.setDemodulatorOutput(receiver_settings.agcsig);
     Receiver.setMinimumModulationDepth(receiver_settings.modmin);
 
+    digitalWrite(BLUE, receiver_settings.led);
+
     Receiver.updateColumnParity();
+
+    readSettings();
+
+    ET.sendData();
+
 }
 
 uint16_t processSamples(uint8_t* samples, uint8_t packetLength, uint8_t samplesPerBit)
@@ -379,7 +496,7 @@ uint16_t processSamples(uint8_t* samples, uint8_t packetLength, uint8_t samplesP
         ////SerialUSB.print(1 & (receivedData >> (packetLength - i)), BIN);
     }
 
-    //Serial1.println();
+   // Serial1.println(receivedData);
     ////SerialUSB.println();
 
     return receivedData;
