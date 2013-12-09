@@ -1,4 +1,5 @@
 import serial, time
+import datetime
 
 #initialization and open the port
 #possible timeout values:
@@ -34,17 +35,10 @@ if ser.isOpen():
         ser.flushInput() #flush input buffer, discarding all its contents
         ser.flushOutput()#flush output buffer, aborting current output 
                      #and discard all that is in buffer
-        #write data
-        ser.write("AT+CSQ")
-        print("write data: AT+CSQ")
-        time.sleep(0.5)  #give the serial port sometime to receive the data
-        numOfLines = 0
         while True:
-            response = ser.readline()
-            print("read data: " + response)
-            numOfLines = numOfLines + 1
-            if (numOfLines >= 5):
-                break
+            if (ser.inWaiting() > 0):
+                response = ser.readline()
+                print(str(datetime.datetime.now().time()) + " read data: " + response)
         ser.close()
     except Exception, e1:
         print "error communicating...: " + str(e1)
