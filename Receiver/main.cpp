@@ -140,6 +140,8 @@ int main()
 
             if (data != 0)
             {
+               Serial1.print(millis()); 
+               Serial1.print(": ");
                Serial1.println(data, BIN); 
             }
             
