@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>BodyComm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+  <script src="static/jquery.min.js"></script>
+  <script src="static/handlebars.min.js"></script>
+  <script src="static/reconnecting-websocket.min.js"></script>
+
+<script>
+$(function () {
+    ws = new ReconnectingWebSocket('ws://localhost:8833/webapp');
+    ws.onopen = function () {
+      ws.send("I'm checking you out clam. 45345");
+    }
+    ws.onmessage = function (x) {
+        $('#theImage').attr('src', "/static/" + x.data);
+        console.log(x);
+        // var data = JSON.parse(x.data);
+    }
+});
+</script>
+</head>
+<body>
+
+<img id="theImage" src="/static/scottgreenwald.jpg" />
+
+</body>
+</html>

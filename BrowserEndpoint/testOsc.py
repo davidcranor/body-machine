@@ -22,7 +22,15 @@ if __name__ == "__main__":
 
   for x in range(10):
     msg = osc_message_builder.OscMessageBuilder(address = "/debug")
-    msg.add_arg(random.random())
+    msg.add_arg("scottgreenwald.jpg" if x % 2 == 1 else "brandynwhite.jpg")
     msg = msg.build()
     client.send(msg)
     time.sleep(1)
+
+  for x in range(100):
+    msg = osc_message_builder.OscMessageBuilder(address = "/debug")
+    msg.add_arg("scottgreenwald.jpg" if x % 2 == 1 else "brandynwhite.jpg")
+    msg = msg.build()
+    client.send(msg)
+    time.sleep(0.1)
+  

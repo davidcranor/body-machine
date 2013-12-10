@@ -7,11 +7,23 @@ import bottle
 import time
 import pymongo
 import json
-
+from OSC import OSCServer
+import sys
+from time import sleep
+import httplib
+from geventwebsocket import WebSocketError
 
 #[{'name': y, 'photo': 'url(https://lh5.googleusercontent.com/-p1Pu9my5DRk/AAAAAAAAAAI/AAAAAAAAO7M/XhO8H6GO5oQ/s120-c/photo.jpg)', 'color': "sky", 'thumbScore': 0, 'speakupScore': 0, 'cameraman': False} for y in sorted(list(set([x['character'] for x in lines])))]
 
 app = bottle.Bottle()
+
+class WebSocketHolder(object):
+    def __init__(self):
+        self.webapps = [];
+
+    def register_webapp(self, ws):
+        self.webapps.append(ws)
+
 
 class ScriptState(object):
     
@@ -37,6 +49,17 @@ class ScriptState(object):
         self.glasses.append(ws)
         self.refresh_cards(self.characters[len(self.glasses) - 1:])
     
+    def update_osc(self, args):
+        if len(args) > 0:
+            WS_NEW = []
+            for ws in self.webapps:
+                try: 
+                    ws.send(args[0])
+                    WS_NEW.append(ws)
+                except WebSocketError:
+                    print("Caught errror on dead websocket")
+            self.webapps = WS_NEW
+
     def update_line(self, line=None, subline=0):
         if line is not None:
             self.current_line = line
@@ -128,6 +151,11 @@ def static(name):
 def data():
     return SCRIPT.data()
 
+@app.get('/fromosc')
+def hello():
+    print("Got a message from osc.")
+    # SCRIPT.update_osc()
+
 @app.route('/osc')
 def api(num=0):
     if bottle.request.environ.get('wsgi.websocket'):
@@ -150,9 +178,9 @@ def api(num=0):
             message = ws.receive()
             if message is None:
                 break
-            message = json.loads(message)
+            #message = json.loads(message)
             print(message)
-            SCRIPT.update_line(message['line'])
+            #SCRIPT.update_line(message['line'])
  
 @app.route('/ws/:num')
 @app.route('/ws/')
@@ -178,9 +206,45 @@ def api(num=0):
 def serve_forever(server):
     server.serve_forever()
  
+def debug_callback(path, tags, args, source):
+    global SCRIPT
+    print("Args from debug message: %s" % args)
+    SCRIPT.update_osc(args)
+    # conn = httplib.HTTPConnection("localhost:8833")
+    # conn.request("GET", "/fromosc")
+
 if __name__ == '__main__':
     myServer = gevent.pywsgi.WSGIServer(('0.0.0.0', 8833), app,
                              handler_class=geventwebsocket.handler.WebSocketHandler)
     serverThread = gevent.spawn(serve_forever, myServer);
-    print("Started the serverThread")
-    gevent.joinall([serverThread])
+    print("Started the wsgi server thread.")
+
+    myOSCServer = OSCServer( ("localhost", 7110) )
+    myOSCServer.timeout = 0
+    myOSCServer.addMsgHandler( "/debug", debug_callback )
+    oscServerThread = gevent.spawn(serve_forever, myOSCServer)
+    print("Started the osc server thread.")
+
+    gevent.joinall([serverThread, oscServerThread])
+
+# WS = []
+ 
+# def osc_listen(data):
+#     global WS
+#     # NOTE: We should catch errors here and create a new WS_NEW list for sockets that don't error, then swap them at the end
+#     for ws in WS:
+#         ws.send(data)
+ 
+# if __name__ == '__main__':
+#     gevent.spawn(osc_listener, osc_listen)  # assumes osc_listener called osc_listen when it gets something
+#     def websocket_app(environ, start_response):
+#         logging.info('Glass connected')
+#         if environ["PATH_INFO"] == '/':
+#             ws = environ["wsgi.websocket"]
+#             WS.append(ws)
+#             while True:
+#                 self.ws.receive()
+#             gevent.sleep()
+#     wsgi_server = pywsgi.WSGIServer(("", websocket_port), websocket_app,
+#                                     handler_class=WebSocketHandler)
+#     wsgi_server.serve_forever()
