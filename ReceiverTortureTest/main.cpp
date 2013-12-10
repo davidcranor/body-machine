@@ -59,6 +59,9 @@ cranor@mit.edu
 //DOES THIS WORK OR DOES THE DIVISION MESS IT UP?
 #define SAMPLING_RATE_US (BIT_TIME_US / SAMPLES_PER_BIT)
 
+//Serial delay in milliseconds
+#define SERIAL_DELAY 100
+
 
 #define MCP2035_IO_PIN 12
 #define MCP2035_CLK_ALERT_PIN 13
@@ -151,6 +154,11 @@ uint8_t computeParity(uint16_t data);
 void readSettings();
 uint8_t stripRegister(uint8_t registerNumber, uint8_t offset, uint8_t mask);
 
+uint32_t previousMillis = 0;
+uint32_t currentMillis = 0;
+
+uint16_t sendBuffer[255];
+uint8_t sendBufferPointer;
 
 
 
@@ -182,6 +190,8 @@ int main()
     ET.begin( (uint8_t*)&receiver_settings, sizeof(receiver_settings), &Serial1);
 
     ET2.begin( (uint8_t*)&receiver_telemetry, sizeof(receiver_telemetry), &Serial1);
+
+    sendBufferPointer = 0;
 
     //Reset timer, flags, and buffers
     resetSampling();
@@ -228,20 +238,39 @@ int main()
 
             data = processSamples(sampleArray, PACKET_LENGTH, SAMPLES_PER_BIT);
 
-            receiver_telemetry.rssi = 0b1111000011110000;
-            receiver_telemetry.decodedData = data;
-
-            //Serial1.println(data);
-            if (data != 0)
+            
+            if (data !=0)
             {
-               SerialUSB.print(millis()); 
-               SerialUSB.print(": ");
-               SerialUSB.println(data, BIN); 
-
-               ET2.sendData();
+                sendBufferPointer++;
+                sendBuffer[sendBufferPointer] = data;  
             }
 
             resetSampling();
+
+        }
+
+            //Wait to see if it has been long enough since we have last sent something
+        currentMillis = millis();
+
+            //SerialUSB.println(currentMillis - previousMillis);
+
+        if(currentMillis - previousMillis > SERIAL_DELAY)
+        {
+                //SerialUSB.println("Timeout!");
+                //Save the current timestamp
+            previousMillis = currentMillis;
+
+                //Send most recent thing in the buffer
+
+            SerialUSB.print(millis()); 
+            SerialUSB.print(": ");
+            SerialUSB.println(0b11111110000000, BIN);
+
+
+            receiver_telemetry.rssi = 0b1111000011110000;
+            receiver_telemetry.decodedData = 0b11111110000000;
+
+            ET2.sendData();
 
         }
     }

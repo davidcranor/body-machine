@@ -70,6 +70,9 @@ cranor@mit.edu
 
 #define DEBUG_PIN 21
 
+#define WAITING 0
+#define DECODING 1
+
 uint8_t debugPinState;
 
 MCP2035 Receiver;
@@ -77,12 +80,23 @@ MCP2035 Receiver;
 // We'll use timer 2
 HardwareTimer timer(2);
 
-uint8_t samplesReady;
-uint16_t samplePointer;
-uint8_t currentSample;
+uint8_t samplesReady = 0;
+uint16_t samplePointer = 0;
+
+
+uint8_t currentSample = 0;
+uint8_t lastSample = 0;
 
 uint8_t sampleArray[NUM_SAMPLES];
 uint16_t data;
+
+uint8_t packetReady;
+uint8_t decodeMode;
+uint8_t samplesCount = 0;
+
+uint16_t receivedData = 0;
+
+uint8_t currentBit = 0;
 
 void initSampleTimer();
 void handler_sampleTime();
@@ -99,10 +113,12 @@ uint8_t computeParity(uint16_t data);
 int main()
 {
     //For debugging
-    delay(3000);
+    //delay(3000);
     pinMode(DEBUG_PIN, OUTPUT);
     digitalWrite(DEBUG_PIN, LOW);
     debugPinState = 0;
+
+    decodeMode = WAITING;
 
     //Set up the timer
     initSampleTimer();
@@ -116,39 +132,21 @@ int main()
     //Reset timer, flags, and buffers
     resetSampling();
 
+    //Go! In this version, sampling and decoding happens in realtime.
+    beginSampling();
+
+    packetReady = 0;
+
     while(1)
     {
-        //Wait for data pin to go high (first incoming bit must be a 0)
-        if(digitalRead(MCP2035_IO_PIN))
+
+        if(packetReady != 0)
         {
-            //Begin sampling, interrupt takes over from here
-            beginSampling();
+            SerialUSB.print(millis()); 
+            SerialUSB.print(": ");
+            SerialUSB.println(data, BIN);
 
-            //Wait for interrupt to indicate sampling is done
-            while(samplesReady == 0)
-            {
-                delay(1);
-            }
-
-            // for(int i = 0; i < NUM_SAMPLES; i++)
-            // {
-            //     Serial1.print(sampleArray[i], BIN);
-            // }
-            // Serial1.println();
-
-            data = processSamples(sampleArray, PACKET_LENGTH, SAMPLES_PER_BIT);
-
-            if (data != 0)
-            {
-               SerialUSB.print(millis()); 
-               SerialUSB.print(": ");
-               SerialUSB.println(data, BIN); 
-            }
-            
-
-            resetSampling();
-
-            //delay(20);
+            packetReady = 0;
         }
     }
 }
@@ -175,26 +173,92 @@ void initSampleTimer()
 void handler_sampleTime()
 {
 
+    //Backup last sample
+    lastSample = currentSample;
+
+    //Take the sample
     currentSample = digitalRead(MCP2035_IO_PIN);
     
-    //Check to see if we are at the end
-    if(samplePointer < NUM_SAMPLES)
+    //sampleArray[samplePointer] = currentSample;
+    
+    //Check to see if we are at the end and if so go back to the beginning
+    if(samplePointer >= NUM_SAMPLES)
     {
-        //If not, take the sample and increment the pointer
-        sampleArray[samplePointer] = digitalRead(MCP2035_IO_PIN);
-        samplePointer++;
-
-    } else {
-        //Otherwise, end sampling and set the done flag
-        //Stop the timer (and interrupt)
-        timer.pause();
-
-        debugPinState = 0;
-        digitalWrite(DEBUG_PIN, debugPinState);
-
-        //Done!
-        samplesReady = 1;
+        samplePointer = 0;
     }
+
+    switch(decodeMode)
+    {
+        case WAITING:
+            //See if a low-to-high transition happened (because if we are waiting and see a high/low transition, something is messed up anyway.)
+            if(currentSample > lastSample)
+            {
+                //If so, set decoding flag, start counting and return.
+                decodeMode = DECODING;
+                currentBit = 0;
+                samplesCount++;
+                return;
+
+            } else {
+            
+                //If not, just return and wait for next sample time.
+                return;
+            }
+
+        break;
+
+        case DECODING:
+            //See if it's been too long since last transition and reset/abort if so
+            if(samplesCount > SAMPLES_PER_BIT + PHASE_TOLERANCE)
+            {
+                samplesCount = 0;
+                currentSample = 0;
+                currentBit = 0;
+                decodeMode = WAITING;
+                return;
+            }
+            
+            //See if a transition happened
+            if(currentSample != lastSample)
+            {
+                if(samplesCount < (SAMPLES_PER_HALF_BIT + PHASE_TOLERANCE) )
+                {
+                
+                //It was not a bit transition we care about - it was a setup for one.  Just keep counting.
+                samplesCount++;
+                
+                } else if(samplesCount >= (SAMPLES_PER_BIT - PHASE_TOLERANCE)) {     
+                    
+                    //Add value to decoded packet
+                    receivedData = receivedData | (currentSample << (PACKET_LENGTH - currentBit - 1) );
+    
+                    //Increment current bit
+                    currentBit++;
+
+                    //Reset count
+                    samplesCount = 0;
+
+                    if(currentBit > 16)
+                    {
+                        //We made it!  Set the flag and reset everything else.
+                        packetReady = 1;
+
+                        samplesCount = 0;
+                        currentBit = 0;
+
+                        currentSample = 0;
+                        lastSample = 0;
+
+                        decodeMode = WAITING;
+                    }
+                }
+            }
+
+        break;
+    }
+
+    //Increment the pointer - DO WE EVEN NEED TO DO THIS?
+    //samplePointer++;
 }
 
 void resetSampling()
@@ -208,6 +272,7 @@ void resetSampling()
     //Reset flags, sample array, and data
     samplesReady = 0;
     samplePointer = 0;
+    samplesCount = 0;
 
     for(uint8_t i = 0; i < NUM_SAMPLES; i++)
     {
