@@ -17,6 +17,8 @@ $(function () {
     }
     ws.onmessage = function (x) {
         $('#theImage').attr('src', "/static/" + x.data);
+        //console.log("About to try to load David's G+ page.");
+        //window.location.href = "https://plus.google.com/+DavidCranor/about";
         console.log(x);
         // var data = JSON.parse(x.data);
     }

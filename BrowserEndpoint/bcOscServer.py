@@ -12,6 +12,9 @@ def print_compute_handler(args, volume):
     print("[{0}] ~ {1}".format(args[0], args[1](volume)))
   except ValueError: pass
 
+def forward_osc_to_websocket(args, num):
+
+
 if __name__ == "__main__":
   parser = argparse.ArgumentParser()
   parser.add_argument("--ip",

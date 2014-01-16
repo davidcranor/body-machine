@@ -57,7 +57,7 @@ class ScriptState(object):
             if args[0] == 16256:
                 print("Found scott!")
                 theData = "scottgreenwald.jpg"
-            elif args[0] == 10922:
+            elif args[0] == 10922 or args[0] == 10920:
                 print("Found david!")
                 theData = "davidcranor.jpg"
             else:
@@ -153,6 +153,10 @@ SCRIPT = ScriptState(json.load(open('lines.js')))
 @app.get('/')
 def index():
     return bottle.static_file('bcWebapp.html', root='.')
+
+@app.get('/profiles')
+def profiles():
+    return bottle.static_file('bcProfiles.html', root='.')
 
 @app.get('/static/:name')
 def static(name):
