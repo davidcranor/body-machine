@@ -50,11 +50,22 @@ class ScriptState(object):
         self.refresh_cards(self.characters[len(self.glasses) - 1:])
     
     def update_osc(self, args):
+
         if len(args) > 0:
+            print("The data from osc %s" % args[0])
+            theData = ""
+            if args[0] == 16256:
+                print("Found scott!")
+                theData = "scottgreenwald.jpg"
+            elif args[0] == 10922:
+                print("Found david!")
+                theData = "davidcranor.jpg"
+            else:
+                theData = args[0]
             WS_NEW = []
             for ws in self.webapps:
                 try: 
-                    ws.send(args[0])
+                    ws.send(theData)
                     WS_NEW.append(ws)
                 except WebSocketError:
                     print("Caught errror on dead websocket")
@@ -219,9 +230,9 @@ if __name__ == '__main__':
     serverThread = gevent.spawn(serve_forever, myServer);
     print("Started the wsgi server thread.")
 
-    myOSCServer = OSCServer( ("localhost", 7110) )
+    myOSCServer = OSCServer( ("localhost", 5006) )
     myOSCServer.timeout = 0
-    myOSCServer.addMsgHandler( "/debug", debug_callback )
+    myOSCServer.addMsgHandler( "/bcdata", debug_callback )
     oscServerThread = gevent.spawn(serve_forever, myOSCServer)
     print("Started the osc server thread.")
 
