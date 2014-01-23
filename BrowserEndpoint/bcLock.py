@@ -11,6 +11,7 @@ from serial.serialutil import SerialException
 app = bottle.Bottle()
 import atexit
 from threading import Timer
+from gevent import Timeout
 
 class ScriptState(object):
     
@@ -92,22 +93,67 @@ def getReadyForMore():
     readyForMore = True
     print("Now I'm ready for more")
 
+def setReadyTimer():
+    r = Timer(5.0, getReadyForMore, ())
+    r.start()
+
+def flushIncessantly(serialport):
+    global readyForMore
+    cnt = 0
+    while not readyForMore:
+        cnt += 1
+        if cnt % 100000 == 0:
+            print("Flushed %s times" % cnt)
+        serialport.flushInput()
+        gevent.sleep()
+    return 
+
+def killThisGuy(greenlet):
+    print "killing greenlet"
+    greenlet.kill()
+
 def listen_forever(serialport):
     global readyForMore
+    global bigBuff
     while True:
         data = serialport.readline()
+        if len(data) > 0:
+            print("Main loop iteration with data")
         if readyForMore:
+            cnt = 0
             if len(data) > 0:
                 readyForMore = False
                 print 'Got:', data
                 toggle_lockstate()
-                r = Timer(1.0, getReadyForMore, ())
-                r.start()
-                print("I'm past the timer")
+                gevent.spawn_later(5, getReadyForMore)
+                #gevent.spawn(setReadyTimer)
+                #r = Timer(5.0, getReadyForMore, ())
+                #r.start()
+                # print("I'm past the timer")
                 #THIS IS WHERE THE ACTION SHOULD HAPPEN
         else:
-            print("Flushing input")
-            serialport.flushInput()
+            # timer = Timeout(5).start()
+            myFlushGreenlet = gevent.with_timeout(5, flushIncessantly, serialport)
+            if myFlushGreenlet != None:
+                gevent.spawn_later(6.0, killThisGuy, myFlushGreenlet)
+                myFlushGreenlet.join()
+            # myFlushGreenlet = gevent.spawn(flushIncessantly, serialport)
+            # myFlushGreenlet.join(timeout=timer)
+            print("FlushGreenlet returned")
+            # while not readyForMore:
+            #     cnt += 1
+            #     if cnt % 10 == 0:
+            #         print("Flushed %s times" % cnt)
+            #     #numbytes = serialport.readinto(bigBuff)
+            #     #print("Not ready for more and just read %s bytes" % numbytes)
+            #     #serialport.readline()
+            #     #serialport.flush()
+            #     # #print("Input length %s" % len(data))
+            #     # if len(data) > 100:
+            #     #     print("Flushing input length %s" % len(data))
+            #     # else:
+            #     #     print("Not flushing data too short length %s" % len(data))
+            #     serialport.flushInput()
 
 def debug_callback(path, tags, args, source):
     global SCRIPT
@@ -125,6 +171,7 @@ def do_cleanup():
     print "goodbye"    
 
 if __name__ == '__main__':
+    bigBuff = bytearray(520)
     readyForMore = True
     lockState = True
     myServer = gevent.pywsgi.WSGIServer(('0.0.0.0', 8833), app,
@@ -142,13 +189,13 @@ if __name__ == '__main__':
 
     # TODO: make serial devices command line arguments
     try:
-        myserialport = Serial('/dev/tty.usbmodem1431', baudrate=9600)
+        myserialport = Serial('/dev/tty.usbmodem1411', baudrate=9600)
         lockState = True;
     except SerialException:
         print("Couldn't connect to doorlock serial device.")
 
     try:
-        myBodySerialPort = Serial('/dev/tty.usbmodem1411', baudrate=115200)
+        myBodySerialPort = Serial('/dev/tty.usbmodem1431', baudrate=115200)
         incomingSerialServerThread = gevent.spawn(listen_forever, myBodySerialPort)
         print("Started incoming serial server thread.")
     except SerialException:
