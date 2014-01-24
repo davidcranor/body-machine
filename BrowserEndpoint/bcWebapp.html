@@ -10,9 +10,17 @@
   <script src="static/reconnecting-websocket.min.js"></script>
 
 <script>
+var lockState = true;
+var timeoutInProgress = false;
+var theTimeout;
+var resetToLockscreenInterval = 5000;
 $(function () {
+
     ws = new ReconnectingWebSocket('ws://localhost:8833/webapp');
     canvas = document.getElementById('theCanvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    $('body').css('margin', '0px');
     context = canvas.getContext('2d');
     context.fillStyle = "rgb(50, 50, 50)";
     context.fillRect(0, 0, canvas.width, canvas.height);
@@ -61,6 +69,11 @@ $(function () {
       }
     }
 
+    function toggleLockstate() {
+      lockState = !lockState;
+      console.log("Set lockstate to " + lockState);
+    }
+
     function clearCanvas() {
         context.fillStyle = "rgb(50, 50, 50)";
         context.fillRect(0, 0, canvas.width, canvas.height);
@@ -70,22 +83,50 @@ $(function () {
       return name === "Scott";
     }
 
+    function setSrcToLock() {
+      if (lockState) {
+        $('#theImage').attr('src', "/static/locked.png");
+        console.log("Setting image src to locked");
+      } else {
+        $('#theImage').attr('src', "/static/unlocked.png");
+        console.log("Setting image src to unlcoked");
+      }
+      timeoutInProgress = false;
+    }
+
     theImage = $('#theImage').load(function() {
       clearCanvas();
       console.log("image src " + this.src);
       console.log(this.src === "http://localhost:8833/static/scottgreenwald.jpg");
       console.log(getPersonName(this.src));
       myName = getPersonName(this.src);
-      imgWidth = 300;
+
+      if (getAuthorization(myName)) {
+        toggleLockstate();
+      }
+
+      if (myName !== "Stranger") {
+        drawName(myName);
+        drawAuth(getAuthorization(myName));
+      }
+
+      if (timeoutInProgress) {
+        clearTimeout(theTimeout);
+      }
+
+      theTimeout = setTimeout(setSrcToLock, resetToLockscreenInterval);
+      timeoutInProgress = true;
+
+      imgWidth = 450;
       imgHeight = imgWidth;
       context.drawImage(this, 0, 0, this.width, this.height, (canvas.width - imgWidth)/2, (canvas.height - imgHeight)/2, imgWidth, imgHeight);
       // context.drawImage(this, 0, 0, this.width, this.height, 250, 75, 300, 300);
-      context.fillStyle = "rgb(200,200,200)";
-      context.font = '36pt Calibri';
-      context.textAlign = 'center';
-      context.fillText("Welcome to Touch Authenticator", canvas.width/2, 50);      
-      drawName(myName);
-      drawAuth(getAuthorization(myName));
+
+      // context.fillStyle = "rgb(200,200,200)";
+      // context.font = '36pt Calibri';
+      // context.textAlign = 'center';
+      // context.fillText("Welcome to Touch Authenticator", canvas.width/2, 50);      
+      
     })
 });
 </script>
@@ -93,7 +134,7 @@ $(function () {
 <body>
 <!-- <h1>Welcome to Body Authenticator</h1> -->
 <canvas id="theCanvas" width=1000 height=800></canvas>
-<img id="theImage" src="/static/scottgreenwald.jpg" />
+<img id="theImage" src="/static/locked.png" />
 
 </body>
 </html>
