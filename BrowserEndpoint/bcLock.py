@@ -13,6 +13,16 @@ import atexit
 from threading import Timer
 from gevent import Timeout
 
+knownIds = ['10101010101010', '11111110000000']
+knownIdSet = set(knownIds)
+authorizedIds = ['10101010101010']
+authorizedIdSet = set(authorizedIds)
+
+idImageMapping = {
+    '10101010101010': "scottgreenwald.jpg",
+    '11111110000000': "davidcranor.jpg"
+}
+
 class ScriptState(object):
     
     def __init__(self):
@@ -21,6 +31,38 @@ class ScriptState(object):
     def register_webapp(self, ws):
         self.webapps.append(ws)
     
+    def updateWs(self, theId):
+        global knownIdSet
+        global authorizedIdSet
+        print("The known id that was detected %s" % theId)
+        theData = idImageMapping[theId]
+        WS_NEW = []
+        for ws in self.webapps:
+            try: 
+                ws.send(theData)
+                WS_NEW.append(ws)
+            except WebSocketError:
+                print("Caught errror on dead websocket")
+        self.webapps = WS_NEW              
+        # if args[0] == 16256:
+        #     print("Found scott!")
+        #     theData = "scottgreenwald.jpg"
+        #     toggle_lockstate()
+        # elif args[0] == 10922 or args[0] == 10920:
+        #     print("Found david!")
+        #     theData = "davidcranor.jpg"
+        #     toggle_lockstate()
+        # else:
+        #     theData = args[0]
+        # WS_NEW = []
+        # for ws in self.webapps:
+        #     try: 
+        #         ws.send(theData)
+        #         WS_NEW.append(ws)
+        #     except WebSocketError:
+        #         print("Caught errror on dead websocket")
+        # self.webapps = WS_NEW        
+
     def update_osc(self, args):
 
         if len(args) > 0:
@@ -112,6 +154,29 @@ def killThisGuy(greenlet):
     print "killing greenlet"
     greenlet.kill()
 
+def parseId(data):
+    global knownIdSet
+    arr1 = data.split(' ')
+    if len(arr1) > 1:
+        print("parsed %s" % arr1[1])
+        theId = arr1[1].strip()
+        if theId in knownIdSet:
+            return theId
+        else:
+            print("Unknown id %s" % theId)
+            return False
+    else:
+        return False
+
+def isAuthorized(theId):
+    global authorizedIdSet
+    # print("Checking authorization of %s in %s" % (theId, authorizedIdSet))
+    # print("returning %s" % theId in authorizedIdSet)
+    # print("checking known case: %s" % ('10101010101010' in authorizedIdSet))
+    # print("len theId %s len of the known guy %s" % (len(theId), len('10101010101010')))
+    print("Authorized %s " % theId if theId in authorizedIdSet else "Not authorized %s" % theId)
+    return theId in authorizedIdSet
+
 def listen_forever(serialport):
     global readyForMore
     global bigBuff
@@ -122,38 +187,26 @@ def listen_forever(serialport):
         if readyForMore:
             cnt = 0
             if len(data) > 0:
-                readyForMore = False
                 print 'Got:', data
-                toggle_lockstate()
+                readyForMore = False
                 gevent.spawn_later(5, getReadyForMore)
-                #gevent.spawn(setReadyTimer)
-                #r = Timer(5.0, getReadyForMore, ())
-                #r.start()
-                # print("I'm past the timer")
-                #THIS IS WHERE THE ACTION SHOULD HAPPEN
+                theId = parseId(data)
+                if isAuthorized(theId):
+                    print("Authorized %s" % theId)
+                    #update websocket
+                    toggle_lockstate()
+                    SCRIPT.updateWs(theId)
+                elif theId:
+                    # update websocket
+                    print("Not authorized %s" % theId)
+                    SCRIPT.updateWs(theId)
         else:
             # timer = Timeout(5).start()
             myFlushGreenlet = gevent.with_timeout(5, flushIncessantly, serialport)
             if myFlushGreenlet != None:
                 gevent.spawn_later(6.0, killThisGuy, myFlushGreenlet)
                 myFlushGreenlet.join()
-            # myFlushGreenlet = gevent.spawn(flushIncessantly, serialport)
-            # myFlushGreenlet.join(timeout=timer)
             print("FlushGreenlet returned")
-            # while not readyForMore:
-            #     cnt += 1
-            #     if cnt % 10 == 0:
-            #         print("Flushed %s times" % cnt)
-            #     #numbytes = serialport.readinto(bigBuff)
-            #     #print("Not ready for more and just read %s bytes" % numbytes)
-            #     #serialport.readline()
-            #     #serialport.flush()
-            #     # #print("Input length %s" % len(data))
-            #     # if len(data) > 100:
-            #     #     print("Flushing input length %s" % len(data))
-            #     # else:
-            #     #     print("Not flushing data too short length %s" % len(data))
-            #     serialport.flushInput()
 
 def debug_callback(path, tags, args, source):
     global SCRIPT
