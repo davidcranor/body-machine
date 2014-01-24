@@ -12,21 +12,87 @@
 <script>
 $(function () {
     ws = new ReconnectingWebSocket('ws://localhost:8833/webapp');
+    canvas = document.getElementById('theCanvas');
+    context = canvas.getContext('2d');
+    context.fillStyle = "rgb(50, 50, 50)";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    // canvas = $('#theCanvas')
+    // context = canvas.getContext('2d')
     ws.onopen = function () {
       ws.send("I'm checking you out clam. 45345");
     }
     ws.onmessage = function (x) {
         $('#theImage').attr('src', "/static/" + x.data);
+        // $('#theImage').css('width', '200px');
+        // $('#theImage').css('height', '200px');
         //console.log("About to try to load David's G+ page.");
         //window.location.href = "https://plus.google.com/+DavidCranor/about";
         console.log(x);
         // var data = JSON.parse(x.data);
     }
+
+    function drawName(name) {
+      context.fillStyle = "rgb(200,200,200)";
+      context.font = '36pt Calibri';
+      context.textAlign = 'center';
+      context.fillText("Hello " + name, canvas.width/2, 130);   
+    }
+
+    function drawAuth(tf) {
+      authString = tf ? "Welcome home" : "This is not your office.";
+      context.fillStyle = "rgb(200,200,200)";
+      context.font = '36pt Calibri';
+      context.textAlign = 'center';
+      context.fillText(authString, canvas.width/2, 190);   
+    }
+
+    function getPersonName(url) {
+      urlArr = url.split("/");
+      nameWithExtension = urlArr[urlArr.length - 1];
+      name = nameWithExtension.split(".")[0];
+      console.log("Name from image url is " + name);
+      if (name === 'scottgreenwald') {
+        return "Scott";
+      } else if (name === 'davidcranor') {
+        return "David";
+      } else {
+        console.log("Unknown person " + name);
+        return "Stranger";
+      }
+    }
+
+    function clearCanvas() {
+        context.fillStyle = "rgb(50, 50, 50)";
+        context.fillRect(0, 0, canvas.width, canvas.height);
+    }    
+
+    function getAuthorization(name) {
+      return name === "Scott";
+    }
+
+    theImage = $('#theImage').load(function() {
+      clearCanvas();
+      console.log("image src " + this.src);
+      console.log(this.src === "http://localhost:8833/static/scottgreenwald.jpg");
+      console.log(getPersonName(this.src));
+      myName = getPersonName(this.src);
+      imgWidth = 300;
+      imgHeight = imgWidth;
+      context.drawImage(this, 0, 0, this.width, this.height, (canvas.width - imgWidth)/2, (canvas.height - imgHeight)/2, imgWidth, imgHeight);
+      // context.drawImage(this, 0, 0, this.width, this.height, 250, 75, 300, 300);
+      context.fillStyle = "rgb(200,200,200)";
+      context.font = '36pt Calibri';
+      context.textAlign = 'center';
+      context.fillText("Welcome to Touch Authenticator", canvas.width/2, 50);      
+      drawName(myName);
+      drawAuth(getAuthorization(myName));
+    })
 });
 </script>
 </head>
 <body>
-
+<!-- <h1>Welcome to Body Authenticator</h1> -->
+<canvas id="theCanvas" width=1000 height=800></canvas>
 <img id="theImage" src="/static/scottgreenwald.jpg" />
 
 </body>
